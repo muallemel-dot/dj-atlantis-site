@@ -1,0 +1,2623 @@
+﻿<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DJ ATLANTIS | אלי מועלם דיג׳יי לחתונות ואירועים</title>
+  <meta name="description" content="DJ ATLANTIS - אלי מועלם, דיג׳יי לחתונות, חינות, בר מצווה ואירועים שמחים עם התאמה לקהל דתי, מסורתי וישראלי.">
+  <meta name="theme-color" content="#090909">
+  <meta property="og:title" content="DJ ATLANTIS">
+  <meta property="og:description" content="אלי מועלם DJ ATLANTIS לחתונות ואירועים שמחים עם רחבה ישראלית, מוזיקה מדויקת ואווירה עד סוף הערב.">
+  <meta property="og:image" content="assets/atlantis-logo.jpeg">
+  <link rel="icon" href="assets/atlantis-logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #090909;
+  --bg-deep: #030303;
+  --panel: #101010;
+  --panel-soft: #171717;
+  --text: #ffffff;
+  --muted: #c8c8c8;
+  --gold: #c99a45;
+  --gold-light: #f0c875;
+  --electric-blue: #28b8ff;
+  --blue-soft: rgba(40, 184, 255, 0.16);
+  --green: #25d366;
+  --line: rgba(255, 255, 255, 0.14);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-xl: 42px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Assistant", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+iframe:focus-visible,
+[tabindex]:focus-visible {
+  outline: 4px solid #ffffff;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 7px rgba(201, 154, 69, 0.72), 0 0 22px rgba(40, 184, 255, 0.32);
+}
+
+button,
+a {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 12px;
+  inset-inline-start: 12px;
+  z-index: 9999;
+  padding: 10px 14px;
+  background: var(--gold);
+  color: #101010;
+  border-radius: var(--radius-sm);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+body.a11y-large-text {
+  font-size: 22px;
+}
+
+body.a11y-readable-font {
+  font-family: Arial, "Assistant", sans-serif;
+  letter-spacing: 0;
+  word-spacing: 0.08em;
+}
+
+body.a11y-underline-links a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+body.a11y-high-contrast {
+  --bg: #000000;
+  --bg-deep: #000000;
+  --panel: #000000;
+  --panel-soft: #000000;
+  --text: #ffffff;
+  --muted: #ffffff;
+  --gold: #ffe066;
+  --gold-light: #fff2a8;
+  --line: rgba(255, 255, 255, 0.75);
+}
+
+body.a11y-high-contrast img,
+body.a11y-high-contrast iframe {
+  filter: contrast(1.12) brightness(1.02);
+}
+
+body.a11y-high-contrast .lightbox-frame img {
+  filter: none !important;
+}
+
+body.a11y-high-contrast .hero-overlay,
+body.a11y-high-contrast .attractions-bg,
+body.a11y-high-contrast .attractions-bg::before,
+body.a11y-high-contrast .attractions-bg::after {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+body.a11y-high-contrast .btn-gold,
+body.a11y-high-contrast .recommend-name {
+  color: #000000;
+  background: #fff2a8;
+}
+
+body.a11y-reduced-motion *,
+body.a11y-reduced-motion *::before,
+body.a11y-reduced-motion *::after {
+  scroll-behavior: auto !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.site-header {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 1000;
+  padding-block-start: 18px;
+  transition: transform 280ms ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-120%);
+}
+
+.header-inner {
+  width: min(1180px, calc(100% - 32px));
+  height: 82px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+  padding: 0 22px;
+  background: rgba(5, 5, 5, 0.72);
+  border-radius: var(--radius-lg);
+  border-block-end: 1px solid rgba(201, 154, 69, 0.42);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 24px rgba(40, 184, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand img,
+.footer-brand img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 200, 117, 0.65);
+  box-shadow: 0 0 22px rgba(201, 154, 69, 0.35), 0 0 18px rgba(40, 184, 255, 0.16);
+}
+
+.site-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  font-weight: 800;
+}
+
+.site-menu a {
+  min-height: 82px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  color: #eeeeee;
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.site-menu a:first-child {
+  border-inline-start: 0;
+}
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
+  color: var(--gold-light);
+  background: rgba(201, 154, 69, 0.09);
+  border-radius: var(--radius-sm);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+}
+
+.site-menu a:first-child {
+  border-start-start-radius: var(--radius-lg);
+  border-end-start-radius: var(--radius-lg);
+}
+
+.site-menu a:last-child {
+  border-start-end-radius: var(--radius-lg);
+  border-end-end-radius: var(--radius-lg);
+}
+
+.social-link,
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 12px;
+  color: var(--gold-light);
+  border: 1px solid rgba(240, 200, 117, 0.42);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.28);
+  font-weight: 900;
+}
+
+.phone-link {
+  color: var(--gold-light);
+  direction: ltr;
+}
+
+.instagram-link {
+  width: 46px;
+  padding: 0;
+}
+
+.instagram-link svg {
+  width: 25px;
+  height: 25px;
+  filter: drop-shadow(0 0 8px rgba(214, 36, 159, 0.38));
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px auto;
+  background: currentColor;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.menu-open .menu-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 150px max(24px, calc((100vw - 1180px) / 2)) 78px;
+}
+
+.hero-bg,
+.hero-bg img,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg {
+  z-index: -3;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92);
+  animation: heroZoom 14s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 72% 32%, rgba(40, 184, 255, 0.16), transparent 26%),
+    radial-gradient(circle at 24% 30%, rgba(201, 154, 69, 0.22), transparent 28%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.58) 47%, rgba(0, 0, 0, 0.78)),
+    linear-gradient(0deg, var(--bg) 0%, rgba(0, 0, 0, 0.06) 46%, rgba(0, 0, 0, 0.76) 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 180px;
+  background: linear-gradient(0deg, var(--bg), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 44px;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 560px;
+}
+
+.kicker {
+  margin: 0 0 12px;
+  color: var(--gold-light);
+  font-weight: 900;
+  font-size: 18px;
+  text-shadow: 0 0 16px rgba(40, 184, 255, 0.16);
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(34px, 4.7vw, 62px);
+  line-height: 1.14;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-wrap: balance;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.78), 0 0 22px rgba(40, 184, 255, 0.1);
+}
+
+h1 span {
+  display: block;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(34px, 4.8vw, 64px);
+  line-height: 1.03;
+  font-weight: 900;
+}
+
+h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.18;
+}
+
+.hero-lead {
+  width: min(640px, 100%);
+  margin: 24px 0 0;
+  color: #eeeeee;
+  font-size: clamp(21px, 2.5vw, 30px);
+  font-weight: 600;
+}
+
+.hero-buttons,
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-block-start: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 28px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-weight: 900;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  color: #111111;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  box-shadow: 0 16px 34px rgba(201, 154, 69, 0.22), 0 0 22px rgba(40, 184, 255, 0.1);
+}
+
+.btn-dark {
+  color: #ffffff;
+  border-color: rgba(40, 184, 255, 0.34);
+  background: linear-gradient(180deg, rgba(40, 184, 255, 0.08), rgba(0, 0, 0, 0.38));
+}
+
+.hero-card {
+  padding: 30px;
+  border: 1px solid rgba(240, 200, 117, 0.42);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(16, 16, 16, 0.92), rgba(0, 0, 0, 0.84)),
+    radial-gradient(circle at 100% 12%, rgba(40, 184, 255, 0.14), transparent 34%),
+    radial-gradient(circle at 50% 0, rgba(201, 154, 69, 0.2), transparent 36%);
+  box-shadow: var(--shadow), 0 0 26px rgba(40, 184, 255, 0.1);
+  text-align: center;
+}
+
+.hero-card img {
+  width: 118px;
+  height: 118px;
+  margin: 0 auto 18px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 200, 117, 0.6);
+}
+
+.hero-card h2 {
+  font-size: 30px;
+}
+
+.hero-card p {
+  color: var(--muted);
+}
+
+.event-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 18px 0 22px;
+}
+
+.event-pills span {
+  padding: 9px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.gold-strip {
+  position: relative;
+  overflow: hidden;
+  contain: layout paint;
+  height: 69px;
+  border-radius: var(--radius-lg);
+  margin-inline: max(16px, calc((100vw - 1240px) / 2));
+  border-block: 1px solid rgba(201, 154, 69, 0.34);
+  background: #0d0d0d;
+}
+
+.strip-track {
+  position: absolute;
+  inset-block: 0;
+  left: -44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+.strip-track span {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  border: 1px solid rgba(240, 200, 117, 0.32);
+  border-radius: 999px;
+  color: var(--gold-light);
+  font-weight: 900;
+  background: rgba(201, 154, 69, 0.08);
+}
+
+.featured-video {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+  gap: 44px;
+  align-items: center;
+  padding: 92px max(24px, calc((100vw - 1180px) / 2));
+  background:
+    radial-gradient(circle at 82% 20%, rgba(201, 154, 69, 0.16), transparent 32%),
+    linear-gradient(180deg, #070707, #111111);
+  border-block-end: 1px solid rgba(240, 200, 117, 0.18);
+}
+
+.featured-video-copy {
+  max-width: 720px;
+}
+
+.featured-video-copy p:not(.kicker) {
+  width: min(640px, 100%);
+  color: var(--muted);
+  font-size: clamp(20px, 2.6vw, 29px);
+  font-weight: 700;
+}
+
+.featured-video-copy .btn {
+  margin-block-start: 14px;
+}
+
+.youtube-frame {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border: 1px solid rgba(240, 200, 117, 0.42);
+  border-radius: var(--radius-lg);
+  background: #000000;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.56),
+    0 0 44px rgba(201, 154, 69, 0.12);
+}
+
+.youtube-frame::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.youtube-frame iframe {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.section {
+  padding: 92px max(24px, calc((100vw - 1180px) / 2));
+}
+
+.section-heading {
+  width: min(760px, 100%);
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.reasons {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(40, 184, 255, 0.1), transparent 28%),
+    radial-gradient(circle at 15% 10%, rgba(201, 154, 69, 0.12), transparent 30%),
+    var(--bg);
+}
+
+.reason-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px minmax(0, 1fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.reason-column {
+  display: grid;
+  gap: 18px;
+}
+
+.reason-card {
+  min-height: 188px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    radial-gradient(circle at 100% 0, rgba(40, 184, 255, 0.08), transparent 42%);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(240, 200, 117, 0.48);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24), 0 0 22px rgba(40, 184, 255, 0.1);
+}
+
+.reason-card p {
+  margin-block-end: 0;
+  color: var(--muted);
+}
+
+.reason-icon {
+  width: 54px;
+  height: 54px;
+  display: inline-grid;
+  place-items: center;
+  margin-block-end: 16px;
+  color: var(--gold-light);
+  border: 1px solid rgba(240, 200, 117, 0.38);
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(201, 154, 69, 0.1), rgba(40, 184, 255, 0.08));
+  box-shadow: 0 0 18px rgba(40, 184, 255, 0.1);
+  font-size: 24px;
+}
+
+.equalizer {
+  grid-template-columns: repeat(3, 5px);
+  gap: 4px;
+}
+
+.equalizer i {
+  width: 5px;
+  height: 24px;
+  background: currentColor;
+  animation: meter 900ms ease-in-out infinite;
+}
+
+.equalizer i:nth-child(2) {
+  animation-delay: -150ms;
+}
+
+.equalizer i:nth-child(3) {
+  animation-delay: -300ms;
+}
+
+.center-image {
+  min-height: 600px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 200, 117, 0.34);
+  border-radius: var(--radius-xl);
+  background: #050505;
+  box-shadow: var(--shadow);
+}
+
+.center-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: contain;
+  transition: transform 600ms ease;
+}
+
+.center-image:hover img {
+  transform: scale(1.04);
+}
+
+.attractions {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 92px max(24px, calc((100vw - 1180px) / 2)) 76px;
+  background: #050505;
+}
+
+.attractions-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 16% 24%, rgba(225, 179, 84, 0.24), transparent 27%),
+    radial-gradient(circle at 82% 18%, rgba(0, 160, 255, 0.18), transparent 29%),
+    radial-gradient(circle at 50% 100%, rgba(225, 179, 84, 0.16), transparent 38%),
+    linear-gradient(115deg, #020202 0%, #101010 48%, #050505 100%);
+}
+
+.attractions-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle, rgba(240, 200, 117, 0.45) 1px, transparent 2px),
+    radial-gradient(circle, rgba(56, 184, 255, 0.28) 1px, transparent 3px);
+  background-size: 34px 34px, 58px 58px;
+  transform: perspective(600px) rotateX(58deg) translateY(70px);
+  transform-origin: center;
+  animation: lightField 18s linear infinite;
+}
+
+.attractions-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 28%, rgba(0, 0, 0, 0.54)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.74), transparent 36%, rgba(0, 0, 0, 0.74)),
+    radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.7), transparent 36%);
+}
+
+.attractions-heading {
+  width: min(920px, 100%);
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.attractions-heading h2 {
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: 1.08;
+  color: #ffffff;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.46);
+}
+
+.attractions-heading p {
+  width: min(760px, 100%);
+  margin: 28px auto 0;
+  color: var(--gold-light);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.attractions-heading p::first-line {
+  color: #f6f6f6;
+}
+
+.attraction-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 50px 34px;
+  align-items: start;
+}
+
+.attraction-item {
+  text-align: center;
+}
+
+.attraction-item img {
+  width: min(210px, 100%);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(240, 200, 117, 0.48);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 34px rgba(225, 179, 84, 0.14);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.attraction-item:hover img {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.52),
+    0 0 0 2px rgba(240, 200, 117, 0.6),
+    0 0 36px rgba(56, 184, 255, 0.2);
+}
+
+.attraction-item h3 {
+  margin-block-start: 24px;
+  color: #f8f4eb;
+  font-size: clamp(26px, 2.8vw, 38px);
+  font-weight: 400;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.58), 0 0 18px rgba(225, 179, 84, 0.18);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1fr);
+  gap: 42px;
+  align-items: center;
+  background: #0f0f0f;
+}
+
+.about-image {
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: #050505;
+}
+
+.about-image img {
+  border-radius: inherit;
+  width: 100%;
+  height: 460px;
+  object-fit: contain;
+}
+
+.about-copy p {
+  color: var(--muted);
+}
+
+.read-more {
+  display: inline-flex;
+  margin-block-start: 12px;
+  color: var(--gold-light);
+  font-weight: 900;
+}
+
+.read-more::after {
+  content: " >";
+  padding-inline-start: 5px;
+}
+
+.reviews {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.9)),
+    url("assets/category-party.webp") center / cover fixed;
+}
+
+.review-slider,
+.gallery-carousel {
+  position: relative;
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.slides {
+  position: relative;
+  min-height: 500px;
+}
+
+.review-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 16px;
+  opacity: 0;
+  visibility: hidden;
+  padding: 42px 74px;
+  text-align: center;
+  border: 1px solid rgba(240, 200, 117, 0.32);
+  border-radius: var(--radius-lg);
+  background: rgba(6, 6, 6, 0.84);
+  box-shadow: var(--shadow);
+  transform: translateX(-28px);
+  transition: opacity 340ms ease, visibility 340ms ease, transform 340ms ease;
+}
+
+.review-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.stars {
+  color: var(--gold-light);
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.review-slide p {
+  max-width: 850px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.review-slide strong {
+  color: var(--gold-light);
+}
+
+.slider-btn {
+  position: absolute;
+  inset-block-start: 50%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 225, 154, 0.74);
+  border-radius: 50%;
+  color: var(--gold-light);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  box-shadow:
+    0 14px 34px rgba(201, 154, 69, 0.32),
+    0 6px 18px rgba(0, 0, 0, 0.42);
+  font-size: 38px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  isolation: isolate;
+}
+
+.slider-btn::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  z-index: -1;
+  border-radius: inherit;
+  background: #070707;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.slider-btn:hover {
+  background: linear-gradient(180deg, #ffe09a, var(--gold));
+}
+
+.slider-btn.prev {
+  inset-inline: auto;
+  right: -20px;
+}
+
+.slider-btn.next {
+  inset-inline: auto;
+  left: -20px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-block-start: 18px;
+}
+
+.slider-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  width: 30px;
+  background: var(--gold-light);
+}
+
+.recommendation-wall {
+  background:
+    linear-gradient(180deg, #080808, #111111 48%, #080808),
+    radial-gradient(circle at 50% 0, rgba(201, 154, 69, 0.13), transparent 34%);
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.recommend-card {
+  min-height: 470px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(240, 200, 117, 0.28);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(24, 24, 24, 0.98), rgba(7, 7, 7, 0.98)),
+    radial-gradient(circle at 50% 0, rgba(201, 154, 69, 0.16), transparent 38%);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+}
+
+.recommend-card img {
+  width: calc(100% - 28px);
+  height: 210px;
+  margin: 78px 14px 0;
+  object-fit: cover;
+  border: 1px solid rgba(240, 200, 117, 0.25);
+  border-radius: var(--radius-md);
+  filter: saturate(0.95) contrast(1.05);
+}
+
+.recommend-name {
+  min-height: 60px;
+  display: grid;
+  grid-template-columns: 1fr 48px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  color: #111111;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.recommend-name i {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  display: inline-block;
+  border: 3px solid rgba(17, 17, 17, 0.86);
+  border-radius: 50%;
+}
+
+.recommend-name i::before,
+.recommend-name i::after {
+  content: "";
+  position: absolute;
+  border: 3px solid rgba(17, 17, 17, 0.86);
+}
+
+.recommend-name i::before {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  inset-inline: 7px;
+  inset-block-start: 5px;
+}
+
+.recommend-name i::after {
+  width: 30px;
+  height: 14px;
+  border-top: 0;
+  border-radius: 0 0 20px 20px;
+  inset-inline: 1px;
+  inset-block-end: -7px;
+}
+
+.recommend-card p {
+  flex: 1;
+  margin: 0;
+  padding: 22px 20px 38px;
+  color: #e9e2d6;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.gallery {
+  background: var(--bg);
+}
+
+.gallery-grid {
+  width: min(1360px, 100%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gallery-grid figure {
+  position: relative;
+  aspect-ratio: 1.35 / 1;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(240, 200, 117, 0.22);
+  border-radius: 22px;
+  background: #000000;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26);
+}
+
+.gallery-grid figure:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  transition: transform 520ms ease, filter 520ms ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.12);
+}
+
+.gallery-rows {
+  display: grid;
+  gap: 18px;
+}
+
+.gallery-row {
+  position: relative;
+}
+
+.gallery-row-track,
+.gallery-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 48px) / 4);
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+
+.gallery-row-track::-webkit-scrollbar,
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-row-track figure,
+.gallery-track figure {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(240, 200, 117, 0.24);
+  border-radius: var(--radius-lg);
+  background: #000000;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  scroll-snap-align: start;
+}
+
+.gallery-row-track figure:focus-visible,
+.gallery-track figure:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+.gallery-row-track img,
+.gallery-track img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 520ms ease, filter 520ms ease;
+}
+
+.gallery-row-track figure:hover img,
+.gallery-track figure:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.12);
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(201, 154, 69, 0.12), transparent 34%),
+    rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-frame {
+  position: relative;
+  width: min(980px, 100%);
+  max-height: min(84vh, 780px);
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  place-items: center;
+  padding: 14px;
+  border: 1px solid rgba(240, 200, 117, 0.24);
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(18, 18, 18, 0.94), rgba(3, 3, 3, 0.94)),
+    radial-gradient(circle at 50% 0, rgba(240, 200, 117, 0.12), transparent 42%);
+  box-shadow:
+    0 32px 100px rgba(0, 0, 0, 0.74),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.lightbox-frame img {
+  max-width: 100%;
+  max-height: 76vh;
+  border: 1px solid rgba(240, 200, 117, 0.34);
+  border-radius: 26px;
+  object-fit: contain;
+  background: #000000;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.58);
+  filter: none !important;
+  mix-blend-mode: normal;
+  opacity: 1;
+  user-select: none;
+}
+
+.lightbox-frame figcaption {
+  position: absolute;
+  inset-block-end: 24px;
+  inset-inline: auto;
+  min-width: 72px;
+  padding: 8px 16px;
+  border: 1px solid rgba(240, 200, 117, 0.3);
+  border-radius: 999px;
+  color: var(--gold-light);
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.36);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 225, 154, 0.74);
+  border-radius: 50%;
+  color: var(--gold-light);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  box-shadow:
+    0 18px 42px rgba(201, 154, 69, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
+  isolation: isolate;
+}
+
+.lightbox-close::before,
+.lightbox-arrow::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  z-index: -1;
+  border-radius: inherit;
+  background: #070707;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  transform: scale(1.06);
+  background: rgba(201, 154, 69, 0.2);
+}
+
+.lightbox-close {
+  inset-block-start: 24px;
+  inset-inline-end: 24px;
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.lightbox-arrow {
+  inset-block-start: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 44px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.lightbox-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.lightbox-prev {
+  inset-inline: auto;
+  right: 24px;
+}
+
+.lightbox-next {
+  inset-inline: auto;
+  left: 24px;
+}
+
+.cta-footer {
+  padding: 100px 24px;
+  background:
+    radial-gradient(circle at 76% 40%, rgba(40, 184, 255, 0.16), transparent 30%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.52)),
+    url("assets/category-events.jpeg") center / cover;
+}
+
+.cta-inner {
+  width: min(860px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta-inner p {
+  color: #eeeeee;
+}
+
+.cta-actions {
+  justify-content: center;
+}
+
+.accessibility-statement {
+  padding: 88px max(24px, calc((100vw - 980px) / 2));
+  background:
+    radial-gradient(circle at 12% 15%, rgba(40, 184, 255, 0.08), transparent 28%),
+    #0d0d0d;
+  border-block-start: 1px solid rgba(240, 200, 117, 0.2);
+}
+
+.accessibility-statement-inner {
+  padding: 34px;
+  border: 1px solid rgba(240, 200, 117, 0.28);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+}
+
+.accessibility-statement h2 {
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.accessibility-statement p,
+.accessibility-statement li {
+  color: var(--muted);
+}
+
+.accessibility-statement ul {
+  margin: 22px 0;
+  padding-inline-start: 26px;
+}
+
+.accessibility-statement a {
+  color: var(--gold-light);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.statement-date {
+  margin-block-end: 0;
+  font-size: 16px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 28px max(24px, calc((100vw - 1180px) / 2));
+  background: #000000;
+  border-block-start: 1px solid rgba(240, 200, 117, 0.24);
+}
+
+.site-footer nav a {
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 900;
+}
+
+.footer-brand img {
+  width: 54px;
+  height: 54px;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: #dddddd;
+  font-weight: 800;
+}
+
+.site-footer a:hover {
+  color: var(--gold-light);
+}
+
+.accessibility-widget {
+  position: fixed;
+  inset-inline-end: 18px;
+  inset-block-end: 22px;
+  z-index: 1300;
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.accessibility-toggle {
+  min-width: 96px;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid rgba(240, 200, 117, 0.7);
+  border-radius: 999px;
+  color: #111111;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+}
+
+.accessibility-panel {
+  width: min(300px, calc(100vw - 32px));
+  padding: 16px;
+  border: 1px solid rgba(240, 200, 117, 0.48);
+  border-radius: var(--radius-lg);
+  background: rgba(0, 0, 0, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.accessibility-panel h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.accessibility-panel button,
+.accessibility-panel a {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.accessibility-panel button[aria-pressed="true"] {
+  color: #111111;
+  background: var(--gold-light);
+}
+
+.back-to-top {
+  position: fixed;
+  inset-inline-end: 38px;
+  inset-block-end: 88px;
+  z-index: 1290;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  color: #111111;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 18px 44px rgba(201, 154, 69, 0.36);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+  box-shadow: 0 22px 52px rgba(201, 154, 69, 0.46);
+}
+
+.back-to-top svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.whatsapp-float {
+  position: fixed;
+  inset-inline-start: 22px;
+  inset-block-end: 22px;
+  z-index: 1200;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  color: #111111;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 48px rgba(201, 154, 69, 0.42);
+  animation: pulse 1900ms ease-in-out infinite;
+}
+
+.whatsapp-float svg {
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
+}
+
+.call-float {
+  position: fixed;
+  inset-inline-start: 22px;
+  inset-block-end: 96px;
+  z-index: 1200;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  color: #111111;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 18px 48px rgba(201, 154, 69, 0.36);
+  animation: pulse 2100ms ease-in-out infinite;
+}
+
+.call-float svg {
+  width: 31px;
+  height: 31px;
+  fill: currentColor;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 620ms ease, transform 620ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+
+@keyframes meter {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1.42); }
+}
+
+@keyframes lightField {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 220px 130px, -190px 210px; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .header-inner {
+    grid-template-columns: auto auto 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-menu {
+    position: fixed;
+    inset-block-start: 104px;
+    inset-inline: 16px;
+    display: grid;
+    justify-content: stretch;
+    background: rgba(0, 0, 0, 0.96);
+    border: 1px solid rgba(240, 200, 117, 0.28);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-16px);
+    transition: opacity 220ms ease, visibility 220ms ease, transform 220ms ease;
+  }
+
+  .menu-open .site-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .site-menu a {
+    min-height: 54px;
+    border-radius: var(--radius-sm);
+    border-inline-start: 0;
+    border-block-end: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header-actions {
+    justify-self: end;
+  }
+
+  .hero-inner,
+  .reason-layout,
+  .about,
+  .featured-video {
+    grid-template-columns: 1fr;
+  }
+
+  .youtube-frame {
+    width: min(390px, 100%);
+    margin-inline: auto;
+  }
+
+  .attraction-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .gallery-row-track,
+  .gallery-track {
+    grid-auto-columns: calc((100% - 28px) / 3);
+    gap: 14px;
+  }
+
+  .recommendation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .center-image,
+  .center-image img {
+    min-height: 440px;
+    height: 440px;
+  }
+
+  .reason-layout {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 17px;
+  }
+
+  .site-header {
+    padding-block-start: 10px;
+  }
+
+  .header-inner {
+    width: calc(100% - 20px);
+    height: 68px;
+    grid-template-columns: auto auto 1fr;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .phone-link {
+    display: none;
+  }
+
+  .social-link {
+    min-width: 40px;
+    padding-inline: 8px;
+  }
+
+  .site-menu {
+    inset-block-start: 88px;
+    inset-inline: 10px;
+  }
+
+  .strip-track {
+    position: static;
+    width: 100%;
+    animation: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 118px 58px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 9.4vw, 42px);
+    line-height: 1.16;
+    font-weight: 800;
+  }
+
+  .hero-inner {
+    gap: 28px;
+  }
+
+  .hero-buttons,
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .hero-card {
+    padding: 24px;
+  }
+
+  .event-pills {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-block: 68px;
+  }
+
+  .attractions {
+    padding-block: 68px 58px;
+  }
+
+  .featured-video {
+    padding-block: 68px;
+    gap: 28px;
+  }
+
+  .featured-video-copy .btn {
+    width: 100%;
+  }
+
+  .attractions-heading {
+    margin-block-end: 34px;
+  }
+
+  .attraction-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 18px;
+  }
+
+  .attraction-item img {
+    width: min(150px, 100%);
+  }
+
+  .attraction-item h3 {
+    margin-block-start: 16px;
+    font-size: 26px;
+  }
+
+  .reason-card {
+    min-height: auto;
+  }
+
+  .center-image,
+  .center-image img {
+    min-height: 360px;
+    height: 360px;
+  }
+
+  .about-image,
+  .about-image img {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .review-slide {
+    padding: 34px 24px;
+  }
+
+  .review-slider .slides {
+    min-height: 620px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid figure {
+    border-radius: 16px;
+  }
+
+  .gallery-row-track,
+  .gallery-track {
+    grid-auto-columns: calc((100% - 12px) / 2);
+    gap: 12px;
+  }
+
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recommend-card {
+    min-height: auto;
+  }
+
+  .recommend-card img {
+    height: 205px;
+    margin-block-start: 42px;
+  }
+
+  .recommend-name {
+    font-size: 23px;
+  }
+
+  .slider-btn.prev {
+    inset-inline: auto;
+    right: 8px;
+  }
+
+  .slider-btn.next {
+    inset-inline: auto;
+    left: 8px;
+  }
+
+  .gallery-lightbox {
+    padding: 14px;
+  }
+
+  .lightbox-frame {
+    padding: 8px;
+    border-radius: 24px;
+  }
+
+  .lightbox-frame img {
+    max-height: 72vh;
+    border-radius: 18px;
+  }
+
+  .lightbox-frame figcaption {
+    inset-block-end: 14px;
+  }
+
+  .lightbox-close {
+    inset-block-start: 14px;
+    inset-inline-end: 14px;
+    width: 46px;
+    height: 46px;
+    font-size: 36px;
+  }
+
+  .lightbox-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 38px;
+  }
+
+  .lightbox-prev {
+    inset-inline: auto;
+    right: 12px;
+  }
+
+  .lightbox-next {
+    inset-inline: auto;
+    left: 12px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accessibility-statement {
+    padding-block: 62px;
+  }
+
+  .accessibility-statement-inner {
+    padding: 24px;
+  }
+
+  .accessibility-widget {
+    inset-inline-end: 12px;
+    inset-block-end: 84px;
+  }
+
+  .back-to-top {
+    width: 52px;
+    height: 52px;
+    inset-inline-end: 34px;
+    inset-block-end: 150px;
+  }
+
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    inset-inline-start: 16px;
+    inset-block-end: 16px;
+  }
+
+  .call-float {
+    width: 56px;
+    height: 56px;
+    inset-inline-start: 16px;
+    inset-block-end: 82px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">דלג לתוכן</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="DJ ATLANTIS דף הבית">
+        <img src="assets/atlantis-logo.jpeg" alt="DJ ATLANTIS">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="פתיחת תפריט">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-menu" id="site-menu" aria-label="ניווט ראשי">
+        <a href="#home">דף הבית</a>
+        <a href="#video">וידאו</a>
+        <a href="#gallery">גלריה</a>
+        <a href="#services">שירותים</a>
+        <a href="#about">אודות</a>
+        <a href="#reviews">המלצות</a>
+        <a href="#contact">צור קשר</a>
+        <a href="#attractions">אטרקציות</a>
+        <a href="#accessibility">נגישות</a>
+      
+      </nav>
+
+      <div class="header-actions">
+        <a class="social-link instagram-link" href="https://www.instagram.com/djatlantis.il?igsh=dzdyNGZ1cHU2dmp2&utm_source=qr" target="_blank" rel="noopener" aria-label="אינסטגרם">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <defs>
+              <radialGradient id="instagramGradient" cx="30%" cy="105%" r="110%">
+                <stop offset="0%" stop-color="#fdf497"/>
+                <stop offset="10%" stop-color="#fdf497"/>
+                <stop offset="35%" stop-color="#fd5949"/>
+                <stop offset="62%" stop-color="#d6249f"/>
+                <stop offset="100%" stop-color="#285AEB"/>
+              </radialGradient>
+            </defs>
+            <path fill="url(#instagramGradient)" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6Zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6Zm4.65-2.95a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05Z"/>
+          </svg>
+        </a>
+        <a class="phone-link" href="tel:+972507324480">050-732-4480</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/cover.jpeg" alt="">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="kicker">DJ ATLANTIS | אלי מועלם</p>
+          <h1><span>דיג׳יי אלי מועלם ATLANTIS</span><span>לחתונות ואירועים שמחים</span></h1>
+          <p class="hero-lead">מוזיקה שמרימה את הרחבה, יחס אישי מהשיחה הראשונה והתאמה אמיתית לקהל שלכם - חתונות, חינות, בר מצווה ואירועים לקהל דתי, מסורתי וישראלי.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-gold" href="https://wa.me/972507324480?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9C%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%96%D7%9E%D7%99%D7%A0%D7%95%D7%AA%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2" target="_blank" rel="noopener">בדיקת תאריך פנוי</a>
+            <a class="btn btn-dark" href="#about">קצת על אלי</a>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="פנייה מהירה">
+          <img src="assets/atlantis-logo.jpeg" alt="DJ ATLANTIS">
+          <h2>רוצים לסגור אירוע?</h2>
+          <p>שלחו הודעה בוואטסאפ עם התאריך וסוג האירוע, ואלי יחזור אליכם עם כל הפרטים.</p>
+          <div class="event-pills" aria-label="סוגי אירועים">
+            <span>חתונה</span>
+            <span>חינה</span>
+            <span>בר מצווה</span>
+          </div>
+          <a class="btn btn-gold" href="https://wa.me/972507324480?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9C%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%92%D7%95%D7%A8%20%D7%90%D7%99%D7%A8%D7%95%D7%A2" target="_blank" rel="noopener">שליחת הודעה</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="gold-strip" aria-label="סגנונות">
+      <div class="strip-track">
+        <span>חתונות</span><span>חינות</span><span>בר מצווה</span><span>קהל דתי</span><span>חסידי</span><span>מזרחי</span><span>ישראלי</span><span>להיטים עדכניים</span>
+        <span>חתונות</span><span>חינות</span><span>בר מצווה</span><span>קהל דתי</span><span>חסידי</span><span>מזרחי</span><span>ישראלי</span><span>להיטים עדכניים</span>
+      </div>
+    </section>
+
+    <section class="featured-video" id="video">
+      <div class="featured-video-copy reveal">
+        <p class="kicker">רגע מהרחבה</p>
+        <h2>ככה נראית רחבה ישראלית שמחה</h2>
+        <p>קבלו הצצה קצרה לאווירה, לקצב ולשמחה שאלי מועלם מביא לאירועים - מהחופה ועד סוף הערב.</p>
+        <a class="btn btn-gold" href="https://youtube.com/shorts/EdenI-GUdv4?si=2q088g1_aAKq2K9e" target="_blank" rel="noopener">צפייה בסרטון</a>
+      </div>
+
+      <div class="youtube-frame reveal">
+        <iframe
+          src="https://www.youtube.com/embed/EdenI-GUdv4?rel=0&modestbranding=1"
+          title="DJ ATLANTIS YouTube Short"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+<section class="section gallery" id="gallery">
+      <div class="section-heading reveal">
+        <p class="kicker">גלריה</p>
+        <h2>רגעים מהאירועים של ATLANTIS</h2>
+      </div>
+
+      <div class="gallery-grid reveal" aria-label="גלריית אירועים של DJ ATLANTIS">
+        <figure><img src="assets/gallery-atlantis/event-01.jpg" alt="אירוע של DJ ATLANTIS תמונה 1" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-08.jpg" alt="אירוע של DJ ATLANTIS תמונה 2" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-02.jpg" alt="אירוע של DJ ATLANTIS תמונה 3" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-12.jpg" alt="אירוע של DJ ATLANTIS תמונה 4" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-04.jpg" alt="אירוע של DJ ATLANTIS תמונה 5" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-09.jpg" alt="אירוע של DJ ATLANTIS תמונה 6" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-27.jpg" alt="אירוע של DJ ATLANTIS תמונה 7" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-03.jpg" alt="אירוע של DJ ATLANTIS תמונה 8" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-14.jpg" alt="אירוע של DJ ATLANTIS תמונה 9" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-36.jpg" alt="אירוע של DJ ATLANTIS תמונה 10" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-45.jpg" alt="אירוע של DJ ATLANTIS תמונה 11" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-05.jpg" alt="אירוע של DJ ATLANTIS תמונה 11" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-21.jpg" alt="אירוע של DJ ATLANTIS תמונה 12" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-10.jpg" alt="אירוע של DJ ATLANTIS תמונה 13" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-17.jpg" alt="אירוע של DJ ATLANTIS תמונה 14" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-31.jpg" alt="אירוע של DJ ATLANTIS תמונה 15" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-06.jpg" alt="אירוע של DJ ATLANTIS תמונה 16" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-22.jpg" alt="אירוע של DJ ATLANTIS תמונה 17" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-39.jpg" alt="אירוע של DJ ATLANTIS תמונה 18" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-07.jpg" alt="אירוע של DJ ATLANTIS תמונה 19" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-28.jpg" alt="אירוע של DJ ATLANTIS תמונה 20" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-11.jpg" alt="אירוע של DJ ATLANTIS תמונה 21" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-43.jpg" alt="אירוע של DJ ATLANTIS תמונה 22" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-13.jpg" alt="אירוע של DJ ATLANTIS תמונה 23" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-33.jpg" alt="אירוע של DJ ATLANTIS תמונה 24" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-16.jpg" alt="אירוע של DJ ATLANTIS תמונה 25" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-24.jpg" alt="אירוע של DJ ATLANTIS תמונה 26" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-41.jpg" alt="אירוע של DJ ATLANTIS תמונה 27" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-18.jpg" alt="אירוע של DJ ATLANTIS תמונה 28" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-34.jpg" alt="אירוע של DJ ATLANTIS תמונה 29" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-20.jpg" alt="אירוע של DJ ATLANTIS תמונה 30" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-29.jpg" alt="אירוע של DJ ATLANTIS תמונה 31" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-44.jpg" alt="אירוע של DJ ATLANTIS תמונה 32" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-23.jpg" alt="אירוע של DJ ATLANTIS תמונה 33" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-35.jpg" alt="אירוע של DJ ATLANTIS תמונה 34" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-19.jpg" alt="אירוע של DJ ATLANTIS תמונה 35" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-37.jpg" alt="אירוע של DJ ATLANTIS תמונה 36" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-25.jpg" alt="אירוע של DJ ATLANTIS תמונה 37" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-40.jpg" alt="אירוע של DJ ATLANTIS תמונה 38" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-26.jpg" alt="אירוע של DJ ATLANTIS תמונה 39" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-42.jpg" alt="אירוע של DJ ATLANTIS תמונה 40" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-30.jpg" alt="אירוע של DJ ATLANTIS תמונה 41" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-38.jpg" alt="אירוע של DJ ATLANTIS תמונה 42" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-32.jpg" alt="אירוע של DJ ATLANTIS תמונה 43" loading="lazy" decoding="async"></figure>
+        <figure><img src="assets/gallery-atlantis/event-15.jpg" alt="אירוע של DJ ATLANTIS תמונה 44" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+    <section class="section reasons" id="services">
+      <div class="section-heading reveal">
+        <p class="kicker">מה אלי מביא לאירוע</p>
+        <h2>מוזיקה שמרגישה בדיוק כמו הקהל שלכם</h2>
+      </div>
+
+      <div class="reason-layout">
+        <div class="reason-column">
+          <article class="reason-card reveal">
+            <div class="reason-icon equalizer"><i></i><i></i><i></i></div>
+            <h3>מוזיקה שבנויה עליכם</h3>
+            <p>לפני האירוע יושבים על הסגנון, הקהל והרגעים החשובים, כדי שהערב ירגיש שלכם מהשיר הראשון.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">★</div>
+            <h3>ליווי אישי עד האירוע</h3>
+            <p>מההודעה הראשונה ועד העלייה לרחבה - זמינות, סדר, תיאום ציפיות ושקט בראש לזוג ולמשפחה.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">♫</div>
+            <h3>מתאים לכל משפחה</h3>
+            <p>חסידי, מזרחי, ישראלי, עדכני ולועזי - שילוב נכון שמכבד את הקהל ומשאיר את הרחבה חיה.</p>
+          </article>
+        </div>
+
+        <div class="center-image reveal">
+          <img src="assets/center-headphones.jpg" alt="אוזניות DJ ATLANTIS">
+        </div>
+
+        <div class="reason-column">
+          <article class="reason-card reveal">
+            <div class="reason-icon">✦</div>
+            <h3>הפרדה או מעורב</h3>
+            <p>היכרות אמיתית עם חתונות דתיות ומסורתיות, יחד עם מוזיקה עכשווית שמתאימה גם לצעירים וגם למבוגרים.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">◆</div>
+            <h3>קריאת קהל בזמן אמת</h3>
+            <p>אלי מרגיש את הרחבה, יודע מתי להרים, מתי לרגש ומתי להחליף כיוון כדי שאף אחד לא יישאר בצד.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">●</div>
+            <h3>מגיעים מוכנים</h3>
+            <p>תכנון מסודר, ציוד מתאים, עמידה בזמנים ואנרגיה טובה מהרגע הראשון ועד השיר האחרון.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-image reveal">
+        <img src="assets/business-card-new.jpg" alt="כרטיס ביקור DJ ATLANTIS">
+      </div>
+      <div class="about-copy reveal">
+        <p class="kicker">קצת על אלי</p>
+        <h2>אלי מועלם - DJ ATLANTIS</h2>
+        <p>אלי מועלם חי את הרחבה. הוא מגיע לכל אירוע עם אנרגיה גבוהה, אוזן חדה לקהל ויכולת לחבר בין סגנונות בלי שהערב ירגיש מפוזר.</p>
+        <p>בחתונות, חינות, בר מצווה ואירועים משפחתיים, המטרה פשוטה: שהמשפחה תתרגש, שהחברים לא ירדו מהרחבה ושאתם תרגישו שמישהו מחזיק לכם את הערב בידיים בטוחות.</p>
+        <p>מוזיקה טובה היא לא רק פלייליסט - היא לדעת מה נכון לרגע.</p>
+        <a class="read-more" href="#contact">בואו נדבר על האירוע</a>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <div class="section-heading reveal">
+        <p class="kicker">זוגות מספרים</p>
+        <h2>מה אומרים אחרי שהאורות נדלקים</h2>
+      </div>
+
+      <div class="review-slider reveal" data-slider="reviews">
+        <button class="slider-btn prev" type="button" aria-label="המלצה קודמת">›</button>
+        <div class="slides">
+          <article class="review-slide active">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"אנחנו מהזוגות שמגיעים לראות את הדיגיי בפעולה לפני שסוגרים, וככה הכרנו את אלי. ראינו מיד שהוא שונה מכל האחרים ולא מתכוון לעשות לנו אירוע גנרי ובנאלי. אחרי הרבה בדיקות הבנו שדווקא איתו האירוע שלנו יהיה מיוחד, מדויק ובדיוק מה שרצינו. אלי הרים לנו את הרחבה עד שתיים בלילה ביום ראשון, וזה לא דבר שקורה כל יום. הוא איש מקצוע ברמה הגבוהה ביותר ואין סיבה להתפשר על פחות מזה."</p>
+            <strong>אופיר רון</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"עברו כמעט שבועיים מאז החתונה ואנחנו עדיין חסרי מילים לתאר כמה אלי היה מושלם. בחתונה של פחות ממאתיים אורחים הרחבה נשארה מלאה ושמחה עד שכיבו את האורות. אלי הצליח להתאים את המוזיקה לקהל מגוון ושונה בצורה מדויקת. האנרגיות שלו פשוט לא נגמרות. בפגישות איתו הוא היה סבלני, הפתיע אותנו עם מוזיקה שענתה בדיוק לטעם שלנו ועזר לנו לגבש את האופי שרצינו לאירוע."</p>
+            <strong>איתי ועדן</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"מהפגישה הראשונה אצל אלי ידענו שאנחנו במקום הנכון. הוא זרם עם כל הרעיונות שלנו וגרם לנו להרגיש הכי בנוח שיש. אלי קלט אותנו ואת הטעם המוזיקלי שלנו ועשה לנו חתונה מהסרטים. במהלך האירוע הוא ידע בדיוק מה לנגן ומתי, ושמר על רחבה שמחה ומלאה עד סוף הערב. הוא מוכשר ברמות אחרות, חי ונושם מוזיקה."</p>
+            <strong>דוד ותמר</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"על אלי שמענו מהמלצות של חבר קרוב. מהרגע שנפגשנו הבנו שהוא הבחירה הנכונה, אפילו התקשרנו לסגור איתו עוד בדרך חזרה הביתה. הוא קלט אותנו מהרגע הראשון והיה זמין לכל שאלה ששאלנו. אלי היה קשוב לרצונות שלנו ובאירוע עצמו ניהל הכל בצורה מושלמת. הרחבה הייתה מלאה מהתחלה ועד הסוף."</p>
+            <strong>משה ואיילה</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"חד משמעית אלי הוא הדיגיי הכי אלוף שיש. הוא ידע להרים את כל האורחים בלי הפסקה והרחבה הייתה מלאה לכל אורך האירוע. כבר מהפגישות הראשונות ועד הערב עצמו, הכל התנהל בצורה מקצועית, נעימה וזורמת. אלי ידע לקרוא את הקהל, להתאים את עצמו לזוג ובזמן אמת גם לאורחים. נהנינו מכל רגע והיה פשוט מטורף."</p>
+            <strong>אריאל ועדי</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"אלי היה הדיגיי שלנו וכבר מהפגישה הראשונה ידענו שאנחנו סוגרים איתו, אפילו ביטלנו את שאר הפגישות שתכננו. אני ובעלי שונים מאוד בטעם המוזיקלי שלנו ולכן היה חשוב למצוא את האיזון המדויק בין הסגנון המודרני שלי לבין הטעם הקלאסי של בן הזוג. אלי הצליח ליצור את השילוב המושלם ודאג שכל האורחים שלנו יישארו על הרחבה."</p>
+            <strong>יעל ואלירן</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"החוויה שלנו עם אלי הייתה פשוט מדהימה. מהרגע הראשון הייתה תחושה של חיבור, הוא היה מקצועי, חברי והבין אותנו לגמרי כאילו אנחנו מכירים שנים. הוא קלט את הסגנון שלנו ועשה לנו חתונה בדיוק כפי שחלמנו. ההתנהלות מולו הייתה נוחה ומסודרת, ובאירוע עצמו אין אחד שלא שאל מי זה הדיגיי המדהים שלא מפסיק להרים."</p>
+            <strong>שלומי ויפית</strong>
+          </article>
+          <article class="review-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"אלי הוא ללא ספק אחת הבחירות הכי טובות שעשינו. כבר מהפגישה הראשונה היה ברור שמדובר באדם מקצועי, קשוב ומלא באנרגיות חיוביות. הוא ידע לקרוא את הקהל בצורה מדויקת, להתאים את המוזיקה לכל שלב באירוע ולשמור על רחבת ריקודים מלאה ושמחה עד סוף הלילה. מעבר למקצועיות, הוא פשוט בן אדם מקסים שכיף לעבוד איתו."</p>
+            <strong>נתי הדר</strong>
+          </article>
+        </div>
+        <button class="slider-btn next" type="button" aria-label="המלצה הבאה">‹</button>
+        <div class="slider-dots" aria-label="ניווט המלצות"></div>
+      </div>
+    </section>
+
+    <section class="section recommendation-wall" id="recommendations">
+      <div class="section-heading reveal">
+        <p class="kicker">מה נשאר מהערב</p>
+        <h2>הרגעים שאנשים מדברים עליהם גם אחרי</h2>
+      </div>
+
+      <div class="recommendation-grid">
+        <article class="recommend-card reveal">
+          <img src="assets/gallery-01.jpeg" alt="אירוע חתונה עם DJ ATLANTIS">
+          <div class="recommend-name"><span>חתונה</span><i aria-hidden="true"></i></div>
+          <p>רחבה שמחה, מוזיקה שמדברת לכולם וחיבור אמיתי בין המשפחה, החברים והאורחים.</p>
+        </article>
+
+        <article class="recommend-card reveal">
+          <img src="assets/gallery-05.jpeg" alt="רחבת ריקודים באירוע עם DJ ATLANTIS">
+          <div class="recommend-name"><span>אירוע יוקרה</span><i aria-hidden="true"></i></div>
+          <p>תכנון מוקפד, סאונד טוב ואווירה אלגנטית שלא מוותרת על שמחה ישראלית אמיתית.</p>
+        </article>
+
+        <article class="recommend-card reveal">
+          <img src="assets/category-weddings.webp" alt="חתונה עם DJ ATLANTIS">
+          <div class="recommend-name"><span>קהל דתי</span><i aria-hidden="true"></i></div>
+          <p>הפרדה או מעורב, חסידי או ישראלי - הכל מותאם מראש כדי שהקהל ירגיש בבית.</p>
+        </article>
+
+        <article class="recommend-card reveal">
+          <img src="assets/gallery-06.jpeg" alt="DJ ATLANTIS באירוע">
+          <div class="recommend-name"><span>ATLANTIS</span><i aria-hidden="true"></i></div>
+          <p>אלי לא רק לוחץ פליי. הוא קורא את האנשים, משנה בזמן אמת ומחזיק את הערב בקצב הנכון.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-footer" id="contact">
+      <div class="cta-inner reveal">
+        <p class="kicker">בדיקת תאריך</p>
+        <h2>רוצים שאלי יהיה אצלכם באירוע?</h2>
+        <p>שלחו וואטסאפ עם התאריך, המקום וסוג האירוע, ונבדוק יחד אם התאריך פנוי ומה הכי נכון לערב שלכם.</p>
+        <div class="cta-actions">
+          <a class="btn btn-gold" href="https://wa.me/972507324480?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9C%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%A8%D7%95%D7%A2" target="_blank" rel="noopener">פנייה בוואטסאפ</a>
+          <a class="btn btn-dark" href="tel:+972507324480">050-732-4480</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="attractions" id="attractions">
+      <div class="attractions-bg" aria-hidden="true"></div>
+      <div class="attractions-heading reveal">
+        <h2>תוספות שעושות וואו ברחבה</h2>
+        <p>רוצים להוסיף רגעים חזקים לחופה, לסלואו או לריקודים? אפשר לשלב אטרקציות שמתאימות בדיוק לאופי האירוע.</p>
+      </div>
+
+      <div class="attraction-grid">
+        <article class="attraction-item reveal">
+          <img src="assets/attraction-sparks.jpg" alt="זיקוקים קרים לחופה">
+          <h3>זיקוקים קרים</h3>
+        </article>
+        <article class="attraction-item reveal">
+          <img src="assets/attraction-lasers.jpg" alt="לייזרים לאירועים">
+          <h3>לייזרים</h3>
+        </article>
+        <article class="attraction-item reveal">
+          <img src="assets/attraction-heavy-smoke.jpg" alt="עשן כבד לריקוד סלואו">
+          <h3>עשן כבד</h3>
+        </article>
+        <article class="attraction-item reveal">
+          <img src="assets/attraction-smoke-cannons.jpg" alt="תותחי עשן לאירוע">
+          <h3>תותחי עשן</h3>
+        </article>
+        <article class="attraction-item reveal">
+          <img src="assets/attraction-lighting.jpg" alt="בימס ותאורה לאירועים">
+          <h3>תאורת במה</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="accessibility-statement" id="accessibility" tabindex="-1">
+      <div class="accessibility-statement-inner reveal">
+        <p class="kicker">הצהרת נגישות</p>
+        <h2>נגישות אתר DJ ATLANTIS</h2>
+        <p>האתר נבנה במטרה לאפשר שימוש נוח ונגיש ככל האפשר לכלל הגולשים, לרבות אנשים עם מוגבלות, ובהתאם לעקרונות תקן ישראלי ת״י 5568 ורמת AA של WCAG.</p>
+        <ul>
+          <li>ניווט באתר באמצעות מקלדת, כולל מעבר עם Tab והפעלת קישורים עם Enter.</li>
+          <li>קישור דילוג לתוכן הראשי בתחילת הדף.</li>
+          <li>מבנה כותרות, אזורי ניווט ותוכן מרכזי לטכנולוגיות מסייעות.</li>
+          <li>טקסט חלופי לתמונות וקישור ישיר לתוכן וידאו ביוטיוב.</li>
+          <li>כלי נגישות לשינוי גודל טקסט, ניגודיות, הדגשת קישורים ועצירת אנימציות.</li>
+        </ul>
+        <p>אם נתקלתם בקושי בגלישה או בתוכן שאינו נגיש, אפשר לפנות ישירות בטלפון או בוואטסאפ: <a href="tel:+972507324480">050-732-4480</a>.</p>
+        <p class="statement-date">עודכן לאחרונה: 1 במאי 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="assets/atlantis-logo.jpeg" alt="DJ ATLANTIS">
+      <span>DJ ATLANTIS</span>
+    </div>
+    <nav aria-label="קישורי תחתית">
+      <a href="#home">דף הבית</a>
+      <a href="#video">וידאו</a>
+      <a href="#gallery">גלריה</a>
+      <a href="#services">שירותים</a>
+      <a href="#about">אודות</a>
+      <a href="#attractions">אטרקציות</a>
+      <a href="#accessibility">נגישות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+  </footer>
+
+  <a class="back-to-top" href="#home" aria-label="חזרה לראש העמוד">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5.5 4.8 12.7l1.9 1.9 4-4v8h2.6v-8l4 4 1.9-1.9L12 5.5Z"/>
+    </svg>
+  </a>
+
+  <div class="accessibility-widget" data-accessibility-widget>
+    <button class="accessibility-toggle" type="button" aria-expanded="false" aria-controls="accessibility-panel">נגישות</button>
+    <div class="accessibility-panel" id="accessibility-panel" hidden>
+      <h2>כלי נגישות</h2>
+      <button type="button" data-a11y-toggle="largeText" aria-pressed="false">הגדלת טקסט</button>
+      <button type="button" data-a11y-toggle="highContrast" aria-pressed="false">ניגודיות גבוהה</button>
+      <button type="button" data-a11y-toggle="underlineLinks" aria-pressed="false">הדגשת קישורים</button>
+      <button type="button" data-a11y-toggle="readableFont" aria-pressed="false">פונט קריא</button>
+      <button type="button" data-a11y-toggle="reducedMotion" aria-pressed="false">עצירת אנימציות</button>
+      <button type="button" data-a11y-reset>איפוס התאמות</button>
+      <a href="#accessibility">הצהרת נגישות</a>
+    </div>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/972507324480?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9C%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener" aria-label="פנייה ישירה בוואטסאפ">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.74 12.74 0 0 0 5.1 22.48L3.2 29.2l6.88-1.8A12.74 12.74 0 1 0 16.04 3.2Zm0 2.31a10.43 10.43 0 0 1 8.88 15.92 10.42 10.42 0 0 1-13.96 3.75l-.49-.29-4.08 1.07 1.09-3.98-.32-.51A10.43 10.43 0 0 1 16.04 5.51Zm-4.5 4.93c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.5 4 6.16 5.45 3.04 1.2 3.66.96 4.32.9.66-.06 2.13-.87 2.43-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42-.36-.18-2.13-1.05-2.46-1.17-.33-.12-.57-.18-.81.18-.24.36-.93 1.17-1.14 1.41-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.78-1.07-.95-1.79-2.13-2-2.49-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.61-.81-.62h-.69Z"/></svg>
+  </a>
+
+  <a class="call-float" href="tel:+972507324480" aria-label="חיוג ישיר ל-DJ ATLANTIS">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6.62 10.79a15.08 15.08 0 0 0 6.59 6.59l2.2-2.2a1.02 1.02 0 0 1 1.03-.24 11.7 11.7 0 0 0 3.67.59 1 1 0 0 1 1 1v3.48a1 1 0 0 1-1 1A17.11 17.11 0 0 1 3 3.89a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.7 11.7 0 0 0 .59 3.67 1.02 1.02 0 0 1-.25 1.03l-2.22 2.2Z"/>
+    </svg>
+  </a>
+
+  <script>
+const body = document.body;
+const header = document.querySelector("[data-header]");
+const menuToggle = document.querySelector(".menu-toggle");
+const siteMenu = document.querySelector(".site-menu");
+const accessibilityToggle = document.querySelector(".accessibility-toggle");
+const accessibilityPanel = document.querySelector(".accessibility-panel");
+const accessibilityButtons = document.querySelectorAll("[data-a11y-toggle]");
+const accessibilityReset = document.querySelector("[data-a11y-reset]");
+
+let lastScrollY = window.scrollY;
+const a11yStorageKey = "dj-atlantis-accessibility";
+const a11yClasses = {
+  largeText: "a11y-large-text",
+  highContrast: "a11y-high-contrast",
+  underlineLinks: "a11y-underline-links",
+  readableFont: "a11y-readable-font",
+  reducedMotion: "a11y-reduced-motion",
+};
+
+const setHeaderState = () => {
+  const current = window.scrollY;
+  header.classList.toggle("is-hidden", current > 220 && current > lastScrollY && !body.classList.contains("menu-open"));
+  lastScrollY = current;
+};
+
+window.addEventListener("scroll", setHeaderState, { passive: true });
+setHeaderState();
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = body.classList.toggle("menu-open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+siteMenu.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+const getA11yState = () => {
+  try {
+    return JSON.parse(localStorage.getItem(a11yStorageKey)) || {};
+  } catch {
+    return {};
+  }
+};
+
+const saveA11yState = (state) => {
+  localStorage.setItem(a11yStorageKey, JSON.stringify(state));
+};
+
+const applyA11yState = (state) => {
+  Object.entries(a11yClasses).forEach(([key, className]) => {
+    body.classList.toggle(className, Boolean(state[key]));
+    const button = document.querySelector(`[data-a11y-toggle="${key}"]`);
+    if (button) button.setAttribute("aria-pressed", String(Boolean(state[key])));
+  });
+};
+
+let a11yState = getA11yState();
+applyA11yState(a11yState);
+
+accessibilityToggle.addEventListener("click", () => {
+  const isOpen = accessibilityPanel.hasAttribute("hidden");
+  accessibilityPanel.toggleAttribute("hidden", !isOpen);
+  accessibilityToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+accessibilityButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const key = button.dataset.a11yToggle;
+    a11yState = { ...a11yState, [key]: !a11yState[key] };
+    saveA11yState(a11yState);
+    applyA11yState(a11yState);
+  });
+});
+
+accessibilityReset.addEventListener("click", () => {
+  a11yState = {};
+  localStorage.removeItem(a11yStorageKey);
+  applyA11yState(a11yState);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    accessibilityPanel.setAttribute("hidden", "");
+    accessibilityToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: "0px 0px -35px" });
+
+document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+const makeSlider = (root) => {
+  const slides = [...root.querySelectorAll(".review-slide")];
+  const prev = root.querySelector(".prev");
+  const next = root.querySelector(".next");
+  const dots = root.querySelector(".slider-dots");
+  let index = 0;
+  let timer;
+
+  const render = () => {
+    slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === index));
+    if (dots) {
+      [...dots.children].forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === index));
+    }
+  };
+
+  const go = (step) => {
+    index = (index + step + slides.length) % slides.length;
+    render();
+  };
+
+  const restart = () => {
+    clearInterval(timer);
+    timer = setInterval(() => go(1), 5200);
+  };
+
+  slides.forEach((_, dotIndex) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `מעבר להמלצה ${dotIndex + 1}`);
+    dot.addEventListener("click", () => {
+      index = dotIndex;
+      render();
+      restart();
+    });
+    dots.appendChild(dot);
+  });
+
+  prev.addEventListener("click", () => {
+    go(-1);
+    restart();
+  });
+
+  next.addEventListener("click", () => {
+    go(1);
+    restart();
+  });
+
+  render();
+  restart();
+};
+
+document.querySelectorAll("[data-slider='reviews']").forEach(makeSlider);
+
+document.querySelectorAll("[data-gallery-row]").forEach((galleryRow) => {
+  const track = galleryRow.querySelector(".gallery-row-track");
+  const prev = galleryRow.querySelector(".prev");
+  const next = galleryRow.querySelector(".next");
+
+  if (!track || !prev || !next) return;
+
+  const scrollGallery = (direction) => {
+    const firstItem = track.querySelector("figure");
+    const styles = window.getComputedStyle(track);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 16;
+    const amount = firstItem ? firstItem.getBoundingClientRect().width + gap : 280;
+    track.scrollBy({ left: direction * amount, behavior: "smooth" });
+  };
+
+  prev.addEventListener("click", () => scrollGallery(1));
+  next.addEventListener("click", () => scrollGallery(-1));
+});
+
+const galleryImages = [...document.querySelectorAll(".gallery-grid img, .gallery-row-track img")];
+
+if (galleryImages.length) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "gallery-lightbox";
+  lightbox.setAttribute("hidden", "");
+  lightbox.innerHTML = `
+    <button class="lightbox-close" type="button" aria-label="סגירת תמונה">×</button>
+    <button class="lightbox-arrow lightbox-prev" type="button" aria-label="תמונה קודמת">›</button>
+    <figure class="lightbox-frame">
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lightbox-arrow lightbox-next" type="button" aria-label="תמונה הבאה">‹</button>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector("img");
+  const lightboxCaption = lightbox.querySelector("figcaption");
+  const closeLightboxButton = lightbox.querySelector(".lightbox-close");
+  const previousLightboxButton = lightbox.querySelector(".lightbox-prev");
+  const nextLightboxButton = lightbox.querySelector(".lightbox-next");
+  let activeGalleryIndex = 0;
+
+  const renderLightbox = () => {
+    const image = galleryImages[activeGalleryIndex];
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || "תמונה מגלריית ATLANTIS";
+    lightboxCaption.textContent = `${activeGalleryIndex + 1} / ${galleryImages.length}`;
+  };
+
+  const openLightbox = (index) => {
+    activeGalleryIndex = index;
+    renderLightbox();
+    lightbox.removeAttribute("hidden");
+    body.classList.add("lightbox-open");
+    closeLightboxButton.focus();
+  };
+
+  const closeLightbox = () => {
+    lightbox.setAttribute("hidden", "");
+    body.classList.remove("lightbox-open");
+  };
+
+  const moveLightbox = (step) => {
+    activeGalleryIndex = (activeGalleryIndex + step + galleryImages.length) % galleryImages.length;
+    renderLightbox();
+  };
+
+  galleryImages.forEach((image, index) => {
+    const figure = image.closest("figure");
+    if (!figure) return;
+
+    figure.setAttribute("role", "button");
+    figure.setAttribute("tabindex", "0");
+    figure.setAttribute("aria-label", `פתיחת תמונה ${index + 1} בגלריה`);
+    figure.addEventListener("click", () => openLightbox(index));
+    figure.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+
+  closeLightboxButton.addEventListener("click", closeLightbox);
+  previousLightboxButton.addEventListener("click", () => moveLightbox(-1));
+  nextLightboxButton.addEventListener("click", () => moveLightbox(1));
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hasAttribute("hidden")) return;
+
+    if (event.key === "Escape") {
+      closeLightbox();
+    } else if (event.key === "ArrowRight") {
+      moveLightbox(1);
+    } else if (event.key === "ArrowLeft") {
+      moveLightbox(-1);
+    }
+  });
+}
+
+  </script>
+</body>
+</html>
+

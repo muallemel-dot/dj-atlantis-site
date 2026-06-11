@@ -1959,28 +1959,52 @@ h3 {
 
   .accessibility-widget {
     inset-inline-end: 12px;
-    inset-block-end: 84px;
+    inset-block-end: max(10px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+
+  .accessibility-toggle {
+    min-width: 74px;
+    min-height: 46px;
+    padding: 0 12px;
+    font-size: 16px;
   }
 
   .back-to-top {
-    width: 52px;
-    height: 52px;
-    inset-inline-end: 34px;
-    inset-block-end: 150px;
+    width: 46px;
+    height: 46px;
+    inset-inline-end: 94px;
+    inset-block-end: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .back-to-top svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .whatsapp-float,
+  .call-float {
+    width: 46px;
+    height: 46px;
+    inset-block-end: max(10px, env(safe-area-inset-bottom));
   }
 
   .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    inset-inline-start: 16px;
-    inset-block-end: 16px;
+    inset-inline-start: 12px;
   }
 
   .call-float {
-    width: 56px;
-    height: 56px;
-    inset-inline-start: 16px;
-    inset-block-end: 82px;
+    inset-inline-start: 66px;
+  }
+
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .call-float svg {
+    width: 24px;
+    height: 24px;
   }
 }
 

@@ -18,51 +18,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "DJ ATLANTIS - אלי מועלם",
-    "alternateName": "די ג׳יי אטלנטיס",
-    "url": "https://djatlantis.co.il/",
-    "image": "https://djatlantis.co.il/assets/atlantis-logo.jpeg",
-    "telephone": "+972507324480",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "IL",
-      "addressRegion": "מרכז הארץ"
-    },
-    "areaServed": [
-      "Israel",
-      "Central Israel",
-      "Rosh HaAyin",
-      "Petah Tikva",
-      "ראש העין",
-      "פתח תקווה",
-      "מרכז הארץ"
-    ],
-    "description": "DJ ATLANTIS אלי מועלם מספק שירותי דיגיי לחתונות, חתונות דתיות, חתונות מסורתיות, חינות, בר מצווה, בת מצווה ואירועים במרכז הארץ.",
-    "knowsAbout": [
-      "DJ for weddings in Israel",
-      "DJ for religious weddings",
-      "DJ for traditional Jewish weddings",
-      "DJ for Henna events",
-      "DJ for Bar Mitzvah",
-      "DJ for Bat Mitzvah",
-      "דיגיי לחתונה דתית",
-      "דיגיי לחינה",
-      "דיגיי לבר מצווה",
-      "דיגיי לבת מצווה",
-      "דיגיי בראש העין",
-      "דיגיי בפתח תקווה",
-      "דיגיי במרכז"
-    ],
-    "sameAs": [
-      "https://www.instagram.com/djatlantis.il"
-    ]
-  }
-  </script>
   <style>
 :root {
   --bg: #090909;
@@ -1386,6 +1341,63 @@ h3 {
   justify-content: center;
 }
 
+.seo-links {
+  padding: 86px max(24px, calc((100vw - 1040px) / 2));
+  background:
+    radial-gradient(circle at 84% 18%, rgba(55, 152, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 16% 76%, rgba(240, 200, 117, 0.11), transparent 30%),
+    #050505;
+  border-block-start: 1px solid rgba(240, 200, 117, 0.18);
+}
+
+.seo-links-inner {
+  padding: 34px;
+  border: 1px solid rgba(240, 200, 117, 0.28);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(24, 23, 20, 0.95), rgba(8, 8, 7, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.44);
+}
+
+.seo-links h2 {
+  width: min(800px, 100%);
+  margin: 0;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.05;
+}
+
+.seo-links p:not(.kicker) {
+  width: min(760px, 100%);
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+.seo-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.seo-link-grid a {
+  display: grid;
+  min-height: 58px;
+  place-items: center;
+  padding: 12px 16px;
+  border: 1px solid rgba(240, 200, 117, 0.34);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.42);
+  color: var(--gold-light);
+  font-weight: 900;
+  text-align: center;
+}
+
+.seo-link-grid a:hover {
+  color: #050505;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  transform: translateY(-2px);
+}
+
 .accessibility-statement {
   padding: 88px max(24px, calc((100vw - 980px) / 2));
   background:
@@ -1949,6 +1961,19 @@ h3 {
     align-items: flex-start;
   }
 
+  .seo-links {
+    padding-block: 62px;
+  }
+
+  .seo-links-inner {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .seo-link-grid {
+    grid-template-columns: 1fr;
+  }
+
   .accessibility-statement {
     padding-block: 62px;
   }
@@ -2008,7 +2033,52 @@ h3 {
   }
 }
 
-  </style>
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DJ ATLANTIS - אלי מועלם",
+    "alternateName": "די ג׳יי אטלנטיס",
+    "url": "https://djatlantis.co.il/",
+    "image": "https://djatlantis.co.il/assets/atlantis-logo.jpeg",
+    "telephone": "+972507324480",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL",
+      "addressRegion": "מרכז הארץ"
+    },
+    "areaServed": [
+      "Israel",
+      "Central Israel",
+      "Rosh HaAyin",
+      "Petah Tikva",
+      "ראש העין",
+      "פתח תקווה",
+      "מרכז הארץ"
+    ],
+    "description": "DJ ATLANTIS אלי מועלם מספק שירותי דיגיי לחתונות, חתונות דתיות, חתונות מסורתיות, חינות, בר מצווה, בת מצווה ואירועים במרכז הארץ.",
+    "knowsAbout": [
+      "DJ for weddings in Israel",
+      "DJ for religious weddings",
+      "DJ for traditional Jewish weddings",
+      "DJ for Henna events",
+      "DJ for Bar Mitzvah",
+      "DJ for Bat Mitzvah",
+      "דיגיי לחתונה דתית",
+      "דיגיי לחינה",
+      "דיגיי לבר מצווה",
+      "דיגיי לבת מצווה",
+      "דיגיי בראש העין",
+      "דיגיי בפתח תקווה",
+      "דיגיי במרכז"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/djatlantis.il"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">דלג לתוכן</a>
@@ -2061,7 +2131,7 @@ h3 {
   <main id="main">
     <section class="hero" id="home">
       <div class="hero-bg" aria-hidden="true">
-        <img src="assets/cover.jpeg" alt="">
+        <img src="assets/cover.jpeg" alt="DJ ATLANTIS אלי מועלם באירוע חתונה יוקרתי">
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -2364,6 +2434,21 @@ h3 {
       </div>
     </section>
 
+    <section class="seo-links" id="seo-services">
+      <div class="seo-links-inner reveal">
+        <p class="kicker">שירותים לפי סגנון אירוע</p>
+        <h2>עמודי מידע למי שמחפש דיגיי דתי ומסורתי</h2>
+        <p>ריכזנו מידע מפורט על חתונות דתיות, חינות, אירועים חרדיים, אירועים לדתי לאומי ואירועים בהפרדה, כדי שתוכלו להבין מה נכון לאירוע שלכם לפני שיחה ראשונה.</p>
+        <div class="seo-link-grid">
+          <a href="שירותים/דיגיי-לחתונה-דתית/">דיגיי לחתונה דתית</a>
+          <a href="שירותים/דיגיי-לחינה-דתית/">דיגיי לחינה דתית</a>
+          <a href="שירותים/דיגיי-לאירוע-חרדי/">דיגיי לאירוע חרדי</a>
+          <a href="שירותים/דיגיי-לדתי-לאומי/">דיגיי לדתי לאומי</a>
+          <a href="שירותים/דיגיי-לאירועים-בהפרדה/">דיגיי לאירועים בהפרדה</a>
+        </div>
+      </div>
+    </section>
+
     <section class="accessibility-statement" id="accessibility" tabindex="-1">
       <div class="accessibility-statement-inner reveal">
         <p class="kicker">הצהרת נגישות</p>
@@ -2616,7 +2701,7 @@ if (galleryImages.length) {
     <button class="lightbox-close" type="button" aria-label="סגירת תמונה">×</button>
     <button class="lightbox-arrow lightbox-prev" type="button" aria-label="תמונה קודמת">›</button>
     <figure class="lightbox-frame">
-      <img src="" alt="">
+      <img src="" alt="תמונה מגלריית DJ ATLANTIS">
       <figcaption></figcaption>
     </figure>
     <button class="lightbox-arrow lightbox-next" type="button" aria-label="תמונה הבאה">‹</button>
@@ -2691,7 +2776,7 @@ if (galleryImages.length) {
   });
 }
 
-  </script>
+</script>
 </body>
 </html>
 

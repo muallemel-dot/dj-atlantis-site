@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://djatlantis.co.il/sitemap.xml

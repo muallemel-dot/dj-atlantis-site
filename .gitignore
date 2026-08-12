@@ -1,0 +1,6 @@
+.netlify/
+backups/
+reports/
+outputs/
+*.zip
+*.log

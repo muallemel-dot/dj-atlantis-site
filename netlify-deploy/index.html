@@ -609,12 +609,13 @@ if (footerNav) {
 document.querySelector(".wide-video-preview")?.addEventListener("click", (event) => {
   const button = event.currentTarget;
   const frame = document.createElement("iframe");
-  frame.src = `https://www.youtube-nocookie.com/embed/${button.dataset.youtube}?rel=0&autoplay=1`;
+  frame.src = `https://www.youtube-nocookie.com/embed/${button.dataset.youtube}?rel=0&autoplay=1&enablejsapi=1&origin=https%3A%2F%2Fdjatlantis.co.il&playsinline=1`;
   frame.title = "DJ ATLANTIS בחתונה דתית בגאמוס ירושלים";
   frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
   frame.allowFullscreen = true;
   frame.referrerPolicy = "strict-origin-when-cross-origin";
   button.replaceWith(frame);
+  window.registerActiveYouTube?.(frame);
 });
 
 if (heroSection && "IntersectionObserver" in window) {
@@ -918,6 +919,7 @@ galleryImages.forEach((image, index) => {
 }
 
 </script>
+  <script src="assets/pause-active-youtube.js?v=20260813" defer></script>
 </body>
 </html>
 

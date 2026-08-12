@@ -1,0 +1,11 @@
+[build]
+  publish = "netlify-deploy"
+
+[context.production]
+  publish = "netlify-deploy"
+
+[context.deploy-preview]
+  publish = "netlify-deploy"
+
+[context.branch-deploy]
+  publish = "netlify-deploy"

@@ -1,0 +1,132 @@
+﻿/* The 1254px source has a 1220px gold circle: 17px is hidden on every side. */
+.seo-profile-image-wrapper {
+  display: block;
+  position: relative;
+  width: min(100%, 360px) !important;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 50% !important;
+  background: #050505;
+}
+
+.seo-profile-image {
+  position: absolute;
+  width: 102.8% !important;
+  height: 102.8% !important;
+  max-width: none !important;
+  left: 50%;
+  top: 50%;
+  object-fit: cover !important;
+  object-position: center;
+  transform: translate(-50%, -50%);
+  border-radius: 0 !important;
+}
+
+/* Service and region artwork already reaches the gold rim, so it must not use the city-image zoom. */
+.hero-card .seo-profile-image-wrapper,
+figure.card .seo-profile-image-wrapper {
+  width: min(100%, 340px) !important;
+}
+
+figure.card {
+  margin: 0 !important;
+}
+
+.hero-card .seo-profile-image,
+figure.card .seo-profile-image {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.seo-whatsapp-float,
+.seo-call-float {
+  position: fixed;
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #050505;
+  background: linear-gradient(180deg, #f0c875, #c99a45);
+  box-shadow: 0 18px 48px rgba(201, 154, 69, 0.4);
+}
+
+.seo-whatsapp-float {
+  inset-inline-start: 22px;
+  bottom: 22px;
+}
+
+.seo-call-float {
+  inset-inline-start: 22px;
+  bottom: 96px;
+}
+
+.seo-whatsapp-float svg {
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
+}
+
+.seo-call-float svg {
+  width: 31px;
+  height: 31px;
+  fill: currentColor;
+}
+
+@media (max-width: 720px) {
+  .seo-profile-image-wrapper {
+    width: min(76vw, 300px) !important;
+  }
+
+  .hero-card .seo-profile-image-wrapper,
+  figure.card .seo-profile-image-wrapper {
+    width: min(100%, 72vw, 280px) !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .top > .bar > nav,
+  .header > .header-inner > .nav {
+    display: none !important;
+  }
+
+  .seo-whatsapp-float,
+  .seo-call-float {
+    width: 46px;
+    height: 46px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .seo-whatsapp-float {
+    inset-inline-start: 12px;
+  }
+
+  .seo-call-float {
+    inset-inline-start: 66px;
+  }
+
+  .seo-whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .seo-call-float svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Keep footer links clear of the fixed mobile actions. */
+  footer,
+  .footer {
+    padding-block-end: calc(110px + env(safe-area-inset-bottom)) !important;
+  }
+}

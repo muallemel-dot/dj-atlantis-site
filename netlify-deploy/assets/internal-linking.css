@@ -1,0 +1,88 @@
+.seo-breadcrumbs,.internal-related{max-width:1120px;margin:18px auto;padding:0 18px}.seo-breadcrumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:#c8c8c8;font-size:14px}.seo-breadcrumbs a,.internal-related a,.internal-context a{color:#efc362;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.seo-breadcrumbs span[aria-current]{color:#fff}.internal-related{margin-top:28px;margin-bottom:28px;padding-top:28px;padding-bottom:28px;border-top:1px solid rgba(214,170,79,.35);border-bottom:1px solid rgba(214,170,79,.2)}.internal-related h2{margin:6px 0 12px}.internal-related p,.internal-context{line-height:1.85}@media(max-width:760px){.seo-breadcrumbs,.internal-related{padding-left:14px;padding-right:14px}.seo-breadcrumbs{margin-top:12px}.internal-related{margin-top:18px;margin-bottom:18px;padding-top:22px;padding-bottom:22px}}
+
+@media (max-width: 760px) {
+  html,
+  body,
+  main,
+  main > *,
+  section,
+  article,
+  aside,
+  .hero-grid > * {
+    min-width: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hero-in,
+  .hero-grid,
+  .section,
+  .card,
+  .seo-breadcrumbs,
+  .internal-related {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  .btn,
+  .chips a {
+    overflow-wrap: anywhere;
+  }
+
+  .btn,
+  .chips a {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    touch-action: manipulation;
+  }
+
+  .seo-breadcrumbs a,
+  .top nav a {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  .seo-breadcrumbs a,
+  .top nav a {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 350px) {
+  .top .bar {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+
+  .top .brand {
+    gap: 0;
+    font-size: 0;
+  }
+
+  .top .brand img {
+    width: 44px;
+    height: 44px;
+  }
+}

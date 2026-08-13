@@ -15,14 +15,14 @@
     const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
     const ratio = rect.width && rect.height ? (visibleWidth * visibleHeight) / (rect.width * rect.height) : 0;
     visibleRatios.set(frame, ratio);
-    if (ratio < 0.2) pauseIfPlaying(frame);
+    if (ratio < 0.5) pauseIfPlaying(frame);
   };
 
   const observer = 'IntersectionObserver' in window
     ? new window.IntersectionObserver((entries) => entries.forEach((entry) => {
         visibleRatios.set(entry.target, entry.intersectionRatio);
-        if (entry.intersectionRatio < 0.2) pauseIfPlaying(entry.target);
-      }), { threshold: [0, 0.2] })
+        if (entry.intersectionRatio < 0.5) pauseIfPlaying(entry.target);
+      }), { threshold: [0, 0.5] })
     : { observe: checkVisibility };
 
   const attachPlayer = (frame) => {
@@ -34,7 +34,7 @@
           if (document.hidden) pauseIfPlaying(frame);
         },
         onStateChange(event) {
-          if (event.data === window.YT.PlayerState.PLAYING && (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.2)) {
+          if (event.data === window.YT.PlayerState.PLAYING && (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.5)) {
             event.target.pauseVideo();
           }
         },
@@ -44,6 +44,11 @@
 
   const register = (frame) => {
     if (frame?.tagName !== 'IFRAME' || frames.has(frame)) return;
+    const playerUrl = new URL(frame.src);
+    if (playerUrl.searchParams.get('origin') !== window.location.origin) {
+      playerUrl.searchParams.set('origin', window.location.origin);
+      frame.src = playerUrl.href;
+    }
     frames.add(frame);
     observer.observe(frame);
     attachPlayer(frame);

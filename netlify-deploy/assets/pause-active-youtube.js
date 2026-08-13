@@ -44,6 +44,11 @@
 
   const register = (frame) => {
     if (frame?.tagName !== 'IFRAME' || frames.has(frame)) return;
+    const playerUrl = new URL(frame.src);
+    if (playerUrl.searchParams.get('origin') !== window.location.origin) {
+      playerUrl.searchParams.set('origin', window.location.origin);
+      frame.src = playerUrl.href;
+    }
     frames.add(frame);
     observer.observe(frame);
     attachPlayer(frame);

@@ -4,7 +4,7 @@ const path = require('node:path');
 
 const pages = new Map([
   ['index.html', 1],
-  ['video/index.html', 19],
+  ['video/index.html', 34],
   ['שירותים/דיגיי-דתי/index.html', 2],
 ]);
 
@@ -26,5 +26,5 @@ for (const [file, expected] of pages) {
   total += frames.length;
 }
 
-assert.equal(total, 22);
+assert.equal(total, 37);
 console.log('youtube-single-tap: ok');

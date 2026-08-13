@@ -32,7 +32,7 @@ class Player {
 }
 window.YT = { Player, PlayerState: { PLAYING: 1 } };
 window.onYouTubeIframeAPIReady();
-intersectionCallback([{ target: directFrame, intersectionRatio: 0 }]);
+intersectionCallback([{ target: directFrame, intersectionRatio: 0.49 }]);
 assert.equal(player.pauseCount, 1);
 
 console.log('pause-active-youtube: ok');

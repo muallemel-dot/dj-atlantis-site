@@ -219,7 +219,7 @@
         <a href="#contact">צור קשר</a>
         <a href="#attractions">אטרקציות</a>
         <a href="#accessibility">נגישות</a>
-      
+
       </nav>
 
       <div class="header-actions">
@@ -269,10 +269,7 @@
     <section class="wide-video-slot" id="dj-wedding-religious-video" aria-labelledby="gamos-video-title">
       <h2 class="wide-video-title" id="gamos-video-title">חתונה דתית בגאמוס ירושלים | DJ ATLANTIS</h2>
       <div class="wide-video-box">
-        <button class="wide-video-preview" type="button" aria-label="הפעלת הסרטון מחתונה דתית בגאמוס ירושלים" data-youtube="ZvFHCfUDooU">
-          <img src="https://i.ytimg.com/vi/ZvFHCfUDooU/hqdefault.jpg" width="480" height="360" alt="DJ ATLANTIS בחתונה דתית בגאמוס ירושלים" loading="lazy">
-          <span class="hero-youtube-play" aria-hidden="true"></span>
-        </button>
+        <iframe src="https://www.youtube-nocookie.com/embed/ZvFHCfUDooU?rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fdjatlantis.co.il&amp;playsinline=1" title="DJ ATLANTIS בחתונה דתית בגאמוס ירושלים" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="cta-actions" style="justify-content:center">
         <a class="btn btn-gold" href="video/">לכל הסרטונים מאירועים</a>
@@ -343,7 +340,7 @@
               <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-03.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-03.webp" data-full-src="assets/gallery-atlantis/event-03.jpg" alt="אירוע של DJ ATLANTIS - תמונה 37" loading="lazy" decoding="async"></picture></figure>
               <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-32.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-32.webp" data-full-src="assets/gallery-atlantis/event-32.jpg" alt="אירוע של DJ ATLANTIS - תמונה 38" loading="lazy" decoding="async"></picture></figure>
               <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-30.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-30.webp" data-full-src="assets/gallery-atlantis/event-30.jpg" alt="אירוע של DJ ATLANTIS - תמונה 39" loading="lazy" decoding="async"></picture></figure>
-            
+
 
             </div>
       <div class="gallery-more-wrap reveal"><button class="btn btn-outline" type="button" id="showAllGallery">לכל התמונות</button></div>
@@ -453,7 +450,7 @@
       </div>
     </section>
 
-    
+
     <section class="cta-footer" id="contact">
       <div class="cta-inner reveal">
         <p class="kicker">בדיקת תאריך</p>
@@ -605,18 +602,6 @@ if (footerNav) {
     footerNav.append(directory);
   });
 }
-
-document.querySelector(".wide-video-preview")?.addEventListener("click", (event) => {
-  const button = event.currentTarget;
-  const frame = document.createElement("iframe");
-  frame.src = `https://www.youtube-nocookie.com/embed/${button.dataset.youtube}?rel=0&autoplay=1&enablejsapi=1&origin=https%3A%2F%2Fdjatlantis.co.il&playsinline=1`;
-  frame.title = "DJ ATLANTIS בחתונה דתית בגאמוס ירושלים";
-  frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-  frame.allowFullscreen = true;
-  frame.referrerPolicy = "strict-origin-when-cross-origin";
-  button.replaceWith(frame);
-  window.registerActiveYouTube?.(frame);
-});
 
 if (heroSection && "IntersectionObserver" in window) {
   const heroObserver = new IntersectionObserver(([entry]) => {

@@ -24,15 +24,28 @@ vm.runInNewContext(source, { document, window, console, setTimeout, URL });
 
 assert.equal(new URL(directFrame.src).searchParams.get('origin'), window.location.origin);
 
-let player;
+const playerByFrame = new Map();
 class Player {
-  constructor() { this.state = 1; this.pauseCount = 0; player = this; }
+  constructor(frame, options) {
+    this.state = 1;
+    this.pauseCount = 0;
+    this.onStateChange = options.events.onStateChange;
+    playerByFrame.set(frame, this);
+  }
   getPlayerState() { return this.state; }
   pauseVideo() { this.state = 2; this.pauseCount += 1; }
 }
 window.YT = { Player, PlayerState: { PLAYING: 1 } };
 window.onYouTubeIframeAPIReady();
 intersectionCallback([{ target: directFrame, intersectionRatio: 0.49 }]);
-assert.equal(player.pauseCount, 1);
+const firstPlayer = playerByFrame.get(directFrame);
+assert.equal(firstPlayer.pauseCount, 1);
+
+const otherFrame = { tagName: 'IFRAME', src: 'https://www.youtube.com/embed/other?enablejsapi=1', getBoundingClientRect: directFrame.getBoundingClientRect };
+window.registerActiveYouTube(otherFrame);
+const secondPlayer = playerByFrame.get(otherFrame);
+firstPlayer.state = 1;
+secondPlayer.onStateChange({ data: 1, target: secondPlayer });
+assert.equal(firstPlayer.pauseCount, 2, 'starting another video pauses the previous one');
 
 console.log('pause-active-youtube: ok');

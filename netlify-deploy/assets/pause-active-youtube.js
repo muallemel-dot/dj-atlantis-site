@@ -9,12 +9,6 @@
     if (player?.getPlayerState?.() === 1) player.pauseVideo();
   };
 
-  const pauseOtherPlayers = (activeFrame) => {
-    frames.forEach((frame) => {
-      if (frame !== activeFrame) pauseIfPlaying(frame);
-    });
-  };
-
   const checkVisibility = (frame) => {
     const rect = frame.getBoundingClientRect();
     const visibleWidth = Math.max(0, Math.min(rect.right, window.innerWidth) - Math.max(rect.left, 0));
@@ -40,9 +34,8 @@
           if (document.hidden) pauseIfPlaying(frame);
         },
         onStateChange(event) {
-          if (event.data === window.YT.PlayerState.PLAYING) {
-            pauseOtherPlayers(frame);
-            if (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.5) event.target.pauseVideo();
+          if (event.data === window.YT.PlayerState.PLAYING && (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.5)) {
+            event.target.pauseVideo();
           }
         },
       },

@@ -63,6 +63,11 @@
   font-weight: 800;
 }
 
+@media (max-width: 760px) {
+  .youtube-facade-caption { font-size: 0; white-space: nowrap; }
+  .youtube-facade-caption::before { content: "לחץ פעמיים להפעלה"; font-size: 15px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .youtube-facade img { transition: none; }
 }

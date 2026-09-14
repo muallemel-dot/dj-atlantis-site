@@ -4,6 +4,18 @@
   const visibleRatios = new Map();
   let apiReady = false;
 
+  const ensureApi = () => {
+    if (window.YT?.Player) {
+      apiReady = true;
+      frames.forEach(attachPlayer);
+    } else if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      document.head.append(script);
+    }
+  };
+
   const pauseIfPlaying = (frame) => {
     const player = players.get(frame);
     if (player?.getPlayerState?.() === 1) player.pauseVideo();
@@ -34,7 +46,11 @@
           if (document.hidden) pauseIfPlaying(frame);
         },
         onStateChange(event) {
-          if (event.data === window.YT.PlayerState.PLAYING && (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.5)) {
+          if (event.data !== window.YT.PlayerState.PLAYING) return;
+          frames.forEach((otherFrame) => {
+            if (otherFrame !== frame) pauseIfPlaying(otherFrame);
+          });
+          if (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.5) {
             event.target.pauseVideo();
           }
         },
@@ -51,6 +67,7 @@
     }
     frames.add(frame);
     observer.observe(frame);
+    ensureApi();
     attachPlayer(frame);
   };
 
@@ -63,16 +80,6 @@
     apiReady = true;
     frames.forEach(attachPlayer);
   };
-
-  if (window.YT?.Player) {
-    apiReady = true;
-    frames.forEach(attachPlayer);
-  } else if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
-    const script = document.createElement('script');
-    script.src = 'https://www.youtube.com/iframe_api';
-    script.async = true;
-    document.head.append(script);
-  }
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) frames.forEach(pauseIfPlaying);

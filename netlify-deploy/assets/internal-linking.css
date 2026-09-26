@@ -99,3 +99,62 @@
 @media (max-width: 760px) {
   .local-video-grid { grid-template-columns: 1fr; }
 }
+
+/* Unified DJ ATLANTIS brand header across static pages. */
+.top,
+.header {
+  background: #000;
+  border-bottom: 1px solid rgba(240, 200, 117, .28);
+}
+
+.top .bar,
+.header .header-inner {
+  min-height: 68px;
+}
+
+.top .brand,
+.header .brand {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f0c875;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.top .brand img,
+.header .brand img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  object-fit: cover;
+  border: 1px solid rgba(240, 200, 117, .42);
+  border-radius: 50%;
+}
+
+.top .brand span,
+.header .brand span,
+.header .brand bdi {
+  display: inline !important;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (max-width: 350px) {
+  .top .brand,
+  .header .brand {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .top .brand img,
+  .header .brand img {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+}

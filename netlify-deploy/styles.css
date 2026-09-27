@@ -564,6 +564,27 @@ h3 {
   line-height: 1.12;
 }
 
+.wide-video-intro {
+  width: min(900px, calc(100% - 28px));
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.wide-video-intro .wide-video-title {
+  width: auto;
+}
+
+.wide-video-intro p {
+  margin: 0 auto 12px;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.75;
+}
+
+.wide-video-intro strong {
+  color: var(--gold-light);
+}
+
 .wide-video-box {
   position: relative;
   width: min(1020px, calc(100% - 28px));
@@ -571,7 +592,7 @@ h3 {
   height: auto;
   margin-inline: auto;
   overflow: hidden;
-  border: 1px solid rgba(240, 200, 117, 0.34);
+  border: 0;
   border-radius: var(--radius-lg);
   background: #000000 url("assets/gallery-atlantis/event-01.jpg") center/cover;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34), inset 0 0 40px rgba(201, 154, 69, 0.05);

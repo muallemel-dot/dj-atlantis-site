@@ -23,6 +23,28 @@
   border-radius: 0 !important;
 }
 
+.city-hero-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid rgba(245, 205, 114, 0.55);
+  border-radius: 28px;
+  background: #090909;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+
+.city-hero-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+  object-position: center 34% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
 /* Service and region artwork already reaches the gold rim, so it must not use the city-image zoom. */
 .hero-card .seo-profile-image-wrapper,
 figure.card .seo-profile-image-wrapper {

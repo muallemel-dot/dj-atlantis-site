@@ -13,6 +13,7 @@
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.allowFullscreen = true;
+    iframe.style.cssText = 'display:block;width:100%;height:100%;border:0;border-radius:inherit';
     facade.replaceWith(iframe);
     window.registerActiveYouTube?.(iframe);
     iframe.focus();

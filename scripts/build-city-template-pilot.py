@@ -288,7 +288,7 @@ def build(CITY: dict, template: str, home: str, featured_video: str, video_mappi
     video_strip = video_strip.replace('href="video/', 'href="../../video/')
     local_videos = video_mapping.get(city, [])[:2]
     video_title = f"מוזיקה ואווירה לאירועים ב־{city}"
-    video_intro = f"מתכננים אירוע באזור {city}? קבלו טעימה מהמוזיקה ומהאווירה שאני מביא לרחבה. הסרטונים הבאים מציגים אירועים במקומות שונים."
+    video_intro = f"מתכננים אירוע באזור {city}? קבלו טעימה מהמוזיקה ומהאווירה שאני מביא לרחבה. הסרטונים הבאים מציגים אירועים מהאולמות וגני אירועים הטובים בארץ."
     if local_videos:
         frames = "".join(video_frame(item) for item in local_videos)
         video_kicker = "תיעוד מקומי"

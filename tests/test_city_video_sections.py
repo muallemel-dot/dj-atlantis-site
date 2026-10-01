@@ -28,7 +28,7 @@ class CityVideoSectionsTest(unittest.TestCase):
             section = unescape(event_section(page))
             self.assertIn(f'<h2 id="event-video-title">מוזיקה ואווירה לאירועים ב־{city["name"]}</h2>', section)
             self.assertIn(f"מתכננים אירוע באזור {city['name']}?", section)
-            self.assertIn("הסרטונים הבאים מציגים אירועים במקומות שונים.", section)
+            self.assertIn("הסרטונים הבאים מציגים אירועים מהאולמות וגני אירועים הטובים בארץ.", section)
             self.assertIn('<div class="home-video-strip"', section)
             local_videos = VIDEO_DATA.get(city["name"], [])[:2]
             if local_videos:

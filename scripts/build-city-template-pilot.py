@@ -132,15 +132,16 @@ def load_city_data() -> list[dict]:
     return json.loads(DATA.read_text(encoding="utf-8")) if DATA.is_file() else snapshot_city_data()
 
 
-def homepage_videos(home: str, cities: list[dict]) -> dict[str, list[dict]]:
+def homepage_videos(home: str, cities: list[dict]) -> tuple[str, dict[str, list[dict]]]:
     items = []
-    featured = re.search(
-        r'<div class="wide-video-box">.*?data-youtube-src="[^"]*?/embed/([^?&"]+)[^"]*"[^>]*data-youtube-title="([^"]+)".*?</div>',
-        home,
-        re.I | re.S,
-    )
-    if featured:
-        items.append({"id": featured.group(1), "title": unescape(featured.group(2))})
+    featured_match = re.search(r'<div class="wide-video-box">.*?</div>', home, re.I | re.S)
+    if not featured_match:
+        raise RuntimeError("סרטון הכותרת של דף הבית לא נמצא")
+    featured = featured_match.group(0)
+    button = re.search(r'data-youtube-src="[^"]*?/embed/([^?&"]+)[^"]*"[^>]*data-youtube-title="([^"]+)"', featured, re.I | re.S)
+    if not button:
+        raise RuntimeError("פרטי סרטון הכותרת של דף הבית לא נמצאו")
+    items.append({"id": button.group(1), "title": unescape(button.group(2))})
     for card in re.findall(r'<a class="home-video-card".*?</a>', home, re.I | re.S):
         video_id = re.search(r'[?&]watch=([^&#"]+)', card)
         title = re.search(r'<img[^>]+alt="([^"]+)"', card, re.I)
@@ -158,7 +159,7 @@ def homepage_videos(home: str, cities: list[dict]) -> dict[str, list[dict]]:
             if (item["id"], item["title"]) not in available:
                 raise RuntimeError(f"הסרטון אינו תואם לגלריה הראשית: {city} / {item['id']}")
             mapping[city].append(item)
-    return mapping
+    return featured, mapping
 
 
 def video_frame(item: dict) -> str:
@@ -186,7 +187,7 @@ def shared_city_copy(city: dict, source: dict) -> dict:
     return rendered
 
 
-def build(CITY: dict, template: str, home: str, video_mapping: dict[str, list[dict]]) -> str:
+def build(CITY: dict, template: str, home: str, featured_video: str, video_mapping: dict[str, list[dict]]) -> str:
     page = re.sub(r'\s*<!-- (?:shared-city-template|city-template-pilot):.*?-->', '', template, flags=re.I)
     SLUG = CITY["slug"]
     city = CITY["name"]
@@ -291,10 +292,12 @@ def build(CITY: dict, template: str, home: str, video_mapping: dict[str, list[di
         video_kicker = "תיעוד מקומי"
         video_intro = f"מתכננים אירוע {CITY['in_name']}? כאן תוכלו לצפות בתיעוד מאירועים אמיתיים שבהם תקלטתי {CITY['in_name']} ולהרגיש את המוזיקה והאווירה שאני מביא לרחבה."
     else:
-        frames = ""
+        frames = f'<div class="ashdod-video-frame" style="grid-column:1/-1">{featured_video}</div>'
         video_kicker = "גלריית אירועים"
         video_intro = f"מתכננים אירוע {CITY['in_name']}? קבלו טעימה מהמוזיקה ומהאווירה שאני מביא לרחבה. הסרטונים הבאים מציגים אירועים במקומות שונים."
-    gallery = f'      <div class="ashdod-video-list">{frames}</div>' if frames else f'      {video_strip}'
+    gallery = f'      <div class="ashdod-video-list">{frames}</div>'
+    if not local_videos:
+        gallery += f'\n      {video_strip}'
     videos = f'''<section class="section ashdod-section" id="event-video" aria-labelledby="event-video-title">
       <div class="ashdod-section-head">
         <p class="kicker">{video_kicker}</p>
@@ -376,11 +379,11 @@ if __name__ == "__main__":
     cities = load_city_data()
     template = ASHDOD.read_text(encoding="utf-8")
     home = HOME.read_text(encoding="utf-8")
-    mapping = homepage_videos(home, cities)
+    featured, mapping = homepage_videos(home, cities)
     shared_copy = next(city for city in cities if city["name"] == "עפרה")
     local_city_count = 0
     for city in cities:
-        rendered = build(shared_city_copy(city, shared_copy), template, home, mapping)
+        rendered = build(shared_city_copy(city, shared_copy), template, home, featured, mapping)
         local_city_count += bool(mapping.get(city["name"]))
         output = PUBLISH_ROOT / "ערים" / city["slug"] / "index.html"
         output.parent.mkdir(parents=True, exist_ok=True)

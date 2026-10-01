@@ -38,9 +38,10 @@ class CityVideoSectionsTest(unittest.TestCase):
             else:
                 self.assertIn("הסרטונים הבאים מציגים אירועים במקומות שונים.", section)
                 self.assertIn('<div class="home-video-strip"', section)
-                self.assertEqual(section.count('class="ashdod-video-frame"'), 0)
-                self.assertNotIn('class="ashdod-video-list"', section)
-                self.assertNotIn("data-youtube-src=", section)
+                self.assertEqual(section.count('class="ashdod-video-frame"'), 1)
+                self.assertIn('class="ashdod-video-list"', section)
+                self.assertIn('/embed/lY5yt_Ja710?', section)
+                self.assertIn('data-youtube-title="DJ ATLANTIS בחתונה חרדית מודרנית באולמי אדמה אשדוד"', section)
 
     def test_canonical_and_structured_city_data_remain_aligned(self) -> None:
         for city in CITY_DATA:

@@ -27,17 +27,16 @@ class CityVideoSectionsTest(unittest.TestCase):
             page = (CITY_ROOT / city["slug"] / "index.html").read_text(encoding="utf-8")
             section = unescape(event_section(page))
             self.assertIn(f'<h2 id="event-video-title">מוזיקה ואווירה לאירועים ב־{city["name"]}</h2>', section)
+            self.assertIn(f"מתכננים אירוע באזור {city['name']}?", section)
+            self.assertIn("הסרטונים הבאים מציגים אירועים במקומות שונים.", section)
+            self.assertIn('<div class="home-video-strip"', section)
             local_videos = VIDEO_DATA.get(city["name"], [])[:2]
             if local_videos:
-                self.assertIn("תיעוד מאירועים אמיתיים", section)
-                self.assertNotIn('<div class="home-video-strip"', section)
                 self.assertEqual(section.count('class="ashdod-video-frame"'), len(local_videos))
                 for video in local_videos:
                     self.assertIn(f'/embed/{video["id"]}?', section)
                     self.assertIn(f'data-youtube-title="{video["title"]}"', section)
             else:
-                self.assertIn("הסרטונים הבאים מציגים אירועים במקומות שונים.", section)
-                self.assertIn('<div class="home-video-strip"', section)
                 self.assertEqual(section.count('class="ashdod-video-frame"'), 1)
                 self.assertIn('class="ashdod-video-list"', section)
                 self.assertIn('/embed/lY5yt_Ja710?', section)

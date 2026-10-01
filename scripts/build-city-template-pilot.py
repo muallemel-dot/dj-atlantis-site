@@ -284,20 +284,19 @@ def build(CITY: dict, template: str, home: str, featured_video: str, video_mappi
     page = replace_one(page, r'<section class="hero ashdod-hero".*?</section>', hero, "hero")
 
     video_strip = home_fragment(home, '<div class="home-video-strip"')
+    video_strip = re.sub(r"[ \t]+(?=\n)", "", video_strip).rstrip()
     video_strip = video_strip.replace('href="video/', 'href="../../video/')
     local_videos = video_mapping.get(city, [])[:2]
     video_title = f"מוזיקה ואווירה לאירועים ב־{city}"
+    video_intro = f"מתכננים אירוע באזור {city}? קבלו טעימה מהמוזיקה ומהאווירה שאני מביא לרחבה. הסרטונים הבאים מציגים אירועים במקומות שונים."
     if local_videos:
         frames = "".join(video_frame(item) for item in local_videos)
         video_kicker = "תיעוד מקומי"
-        video_intro = f"מתכננים אירוע {CITY['in_name']}? כאן תוכלו לצפות בתיעוד מאירועים אמיתיים שבהם תקלטתי {CITY['in_name']} ולהרגיש את המוזיקה והאווירה שאני מביא לרחבה."
     else:
         frames = f'<div class="ashdod-video-frame" style="grid-column:1/-1">{featured_video}</div>'
         video_kicker = "גלריית אירועים"
-        video_intro = f"מתכננים אירוע {CITY['in_name']}? קבלו טעימה מהמוזיקה ומהאווירה שאני מביא לרחבה. הסרטונים הבאים מציגים אירועים במקומות שונים."
     gallery = f'      <div class="ashdod-video-list">{frames}</div>'
-    if not local_videos:
-        gallery += f'\n      {video_strip}'
+    gallery += f'\n      {video_strip}'
     videos = f'''<section class="section ashdod-section" id="event-video" aria-labelledby="event-video-title">
       <div class="ashdod-section-head">
         <p class="kicker">{video_kicker}</p>

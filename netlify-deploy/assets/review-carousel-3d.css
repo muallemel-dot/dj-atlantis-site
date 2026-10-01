@@ -181,25 +181,33 @@
   }
 
   .review-3d .slides {
-    width: min(318px, calc(100% - 58px));
-    min-height: var(--review-stage-height, 650px);
-    height: var(--review-stage-height, 650px);
+    width: min(320px, 100%);
+    min-height: 420px;
+    height: 420px;
   }
 
   .review-3d .review-slide,
   .review-3d .review-slide.active {
-    padding: 30px 22px;
+    height: 420px;
+    min-height: 0;
+    gap: 10px;
+    padding: 20px 18px;
+    overflow: hidden;
   }
 
   .review-3d .review-slide p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 12;
     font-size: 16px;
     line-height: 1.48;
   }
 
   .review-carousel-card {
-    width: 88vw;
-    max-height: calc(100dvh - 72px);
-    padding: 26px 20px;
+    width: min(82vw, 320px);
+    max-height: 70dvh;
+    padding: 22px 18px;
   }
 
   .review-carousel-card p {

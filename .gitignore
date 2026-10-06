@@ -1,6 +1,67 @@
+# Re-creatable local state
 .netlify/
+node_modules/
+__pycache__/
+*.pyc
+
+# Local backups and duplicate worktrees
 backups/
-reports/
 outputs/
+reports/
+.codex-deploy-staging-*/
+.git-empty-backup-*/
+netlify-drop-*/
+netlify-live-current/
+netlify-live-gallery-snapshot/
+
+# Generated duplicate site trees; netlify-deploy is the published copy
+אזורים/
+בר-מצווה/
+חינות/
+חתונות/
+ערים/
+video/
+embed-diagnostic/
+landing/
+
+# Temporary archives and QA output
 *.zip
 *.log
+artifacts-*.png
+business-card-*.png
+gallery-*-contact-sheet.jpg
+gallery-contact-sheet-*.jpg
+mobile-floating-*.png
+yossi-style-*.png
+
+# Local source experiments; netlify-deploy is the current site
+/assets/
+/data/competitors/
+/scripts/
+/tests/
+/tools/
+/שירותים/
+/תמונות DJ ATLANTIS לפי ערים/
+/_headers
+/build-*.py
+/dj-atlantis-single-file.html
+/eslint.config.mjs
+/gallery-numbered-list.html
+/local-server.js
+/manual-indexing-*.txt
+/open-phone-preview-firewall.bat
+/package.json
+/pnpm-lock.yaml
+/pnpm-workspace.yaml
+/run-*.bat
+/script.js
+/seo-status.json
+/styles.css
+/tsconfig.json
+/אינדוקס-*.txt
+/רשימת-*.txt
+
+# Local Codex state
+.agents/
+.codex-last-*.txt
+.codex-root-report.txt

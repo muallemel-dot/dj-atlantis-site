@@ -2,7 +2,7 @@
   const strip = document.querySelector(".home-video-strip");
   const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches || document.body.classList.contains("a11y-reduced-motion");
 
-  if (strip && !reducedMotion()) {
+  if (strip) {
     const cards = [...strip.querySelectorAll(".home-video-card")];
     let active = 0;
     let autoplay = null;
@@ -40,8 +40,9 @@
 
     const startAutoplay = () => {
       stopAutoplay();
+      if (reducedMotion()) return;
       autoplay = setInterval(() => {
-        if (document.hidden || reducedMotion()) return;
+        if (document.hidden || reducedMotion() || strip.contains(document.activeElement)) return;
         active = (active + 1) % cards.length;
         render();
       }, 2800);
@@ -56,11 +57,6 @@
     strip.classList.add("is-3d");
     render();
     startAutoplay();
-    const preloadImages = () => cards.forEach((card) => {
-      card.querySelector("img")?.setAttribute("loading", "eager");
-    });
-    if ("requestIdleCallback" in window) requestIdleCallback(preloadImages, { timeout: 2000 });
-    else setTimeout(preloadImages, 600);
     strip.addEventListener("pointerenter", stopAutoplay);
     strip.addEventListener("pointerleave", startAutoplay);
     strip.addEventListener("focusin", stopAutoplay);

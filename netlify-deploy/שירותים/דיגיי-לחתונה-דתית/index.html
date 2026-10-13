@@ -241,7 +241,7 @@
 
 </style>
   <link rel="stylesheet" href="../../assets/seo-profile-images.css?v=20260805-2235">
-  <link rel="stylesheet" href="../../assets/youtube-facade.css?v=20260914-2">
+  <link rel="stylesheet" href="../../assets/youtube-facade.css?v=20261013-1">
   <link rel="stylesheet" href="/assets/internal-linking.css?v=20260925-header2">
   <script defer src="../../assets/city-entry-ad.js?v=20260807"></script>
 </head>
@@ -409,7 +409,7 @@
       });
     };
     const read = () => {
-      try { return JSON.parse(localStorage.getItem(key) || '{}'); } catch { return {}; }
+      try { return JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch { return {}; }
     };
     let state = read();
     apply(state);
@@ -424,22 +424,22 @@
       btn.addEventListener('click', () => {
         const name = btn.dataset.siteA11yToggle;
         state[name] = !state[name];
-        localStorage.setItem(key, JSON.stringify(state));
+        try { localStorage.setItem(key, JSON.stringify(state)); } catch { /* ponytail: accessibility works without storage. */ }
         apply(state);
       });
     });
     if (reset) {
       reset.addEventListener('click', () => {
         state = {};
-        localStorage.removeItem(key);
+        try { localStorage.removeItem(key); } catch { /* ponytail: accessibility works without storage. */ }
         apply(state);
       });
     }
   })();
   </script>
 
-  <script src="../../assets/pause-active-youtube.js?v=20260914-2" defer></script>
-  <script src="../../assets/youtube-facade.js?v=20260914" defer></script>
+  <script src="../../assets/pause-active-youtube.js?v=20261013-1" defer></script>
+  <script src="../../assets/youtube-facade.js?v=20261013-1" defer></script>
 </body>
 </html>
 

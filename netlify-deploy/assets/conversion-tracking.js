@@ -11,7 +11,11 @@
   });
 
   if (Object.keys(attribution).length) {
-    sessionStorage.setItem("dj_atlantis_attribution", JSON.stringify(attribution));
+    try {
+      sessionStorage.setItem("dj_atlantis_attribution", JSON.stringify(attribution));
+    } catch (_) {
+      // ponytail: attribution storage is optional; contact actions must still work.
+    }
   }
 
   function track(eventName, details) {
@@ -35,6 +39,7 @@
     if (!form) return;
 
     event.preventDefault();
+    if (!form.reportValidity()) return;
     var data = new FormData(form);
     var message = [
       "היי אלי, אשמח לבדוק זמינות של DJ ATLANTIS לאירוע שלי.",

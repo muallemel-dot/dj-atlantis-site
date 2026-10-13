@@ -38,7 +38,9 @@ yossi-style-*.png
 /assets/
 /data/competitors/
 /scripts/
-/tests/
+/tests/*
+!/tests/site-runtime.test.mjs
+!/tests/test_site_seo.py
 /tools/
 /שירותים/
 /תמונות DJ ATLANTIS לפי ערים/

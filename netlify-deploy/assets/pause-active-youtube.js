@@ -1,7 +1,8 @@
 (() => {
   const frames = new Set();
   const players = new Map();
-  const visibleRatios = new Map();
+  const visibleFrames = new Map();
+  const pauseTimers = new Map();
   let apiReady = false;
 
   const ensureApi = () => {
@@ -18,23 +19,35 @@
 
   const pauseIfPlaying = (frame) => {
     const player = players.get(frame);
-    if (player?.getPlayerState?.() === 1) player.pauseVideo();
+    const state = player?.getPlayerState?.();
+    if (state === 1 || state === 3) player.pauseVideo();
+  };
+
+  const updateVisibility = (frame, visible) => {
+    visibleFrames.set(frame, visible);
+    if (visible) {
+      clearTimeout(pauseTimers.get(frame));
+      pauseTimers.delete(frame);
+    } else if (!pauseTimers.has(frame)) {
+      // ponytail: brief viewport changes on mobile must not cancel a user's playback.
+      pauseTimers.set(frame, setTimeout(() => {
+        pauseTimers.delete(frame);
+        if (visibleFrames.get(frame) === false) pauseIfPlaying(frame);
+      }, 750));
+    }
   };
 
   const checkVisibility = (frame) => {
     const rect = frame.getBoundingClientRect();
     const visibleWidth = Math.max(0, Math.min(rect.right, window.innerWidth) - Math.max(rect.left, 0));
     const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
-    const ratio = rect.width && rect.height ? (visibleWidth * visibleHeight) / (rect.width * rect.height) : 0;
-    visibleRatios.set(frame, ratio);
-    if (ratio < 0.5) pauseIfPlaying(frame);
+    updateVisibility(frame, visibleWidth > 0 && visibleHeight > 0);
   };
 
   const observer = 'IntersectionObserver' in window
     ? new window.IntersectionObserver((entries) => entries.forEach((entry) => {
-        visibleRatios.set(entry.target, entry.intersectionRatio);
-        if (entry.intersectionRatio < 0.5) pauseIfPlaying(entry.target);
-      }), { threshold: [0, 0.5] })
+        updateVisibility(entry.target, entry.isIntersecting);
+      }), { threshold: 0 })
     : { observe: checkVisibility };
 
   const attachPlayer = (frame) => {
@@ -46,13 +59,12 @@
           if (document.hidden) pauseIfPlaying(frame);
         },
         onStateChange(event) {
-          if (event.data !== window.YT.PlayerState.PLAYING) return;
+          if (event.data !== window.YT.PlayerState.PLAYING && event.data !== window.YT.PlayerState.BUFFERING) return;
           frames.forEach((otherFrame) => {
             if (otherFrame !== frame) pauseIfPlaying(otherFrame);
           });
-          if (document.hidden || (visibleRatios.get(frame) ?? 1) < 0.5) {
-            event.target.pauseVideo();
-          }
+          if (document.hidden) event.target.pauseVideo();
+          else if (visibleFrames.get(frame) === false) updateVisibility(frame, false);
         },
       },
     }));

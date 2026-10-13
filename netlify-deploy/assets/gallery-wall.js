@@ -43,6 +43,7 @@
       figure.style.setProperty("--gallery-pointer", visible ? "auto" : "none");
       figure.style.zIndex = String(10 - depth);
       figure.tabIndex = visible ? 0 : -1;
+      figure.setAttribute("role", "button");
       figure.setAttribute("aria-hidden", String(!visible));
       const alt = figure.querySelector("img")?.alt || "תמונה מהאירוע";
       figure.setAttribute("aria-label", `פתיחת הגלריה מהתמונה: ${alt}`);
@@ -97,7 +98,7 @@
     stopWallAutoplay();
     wallAutoplay = setInterval(() => {
       const bounds = wall.getBoundingClientRect();
-      if (reducedMotion() || !dialog.hidden || document.hidden || bounds.bottom < 0 || bounds.top > innerHeight) return;
+      if (reducedMotion() || !dialog.hidden || document.hidden || wall.contains(document.activeElement) || bounds.bottom < 0 || bounds.top > innerHeight) return;
       rows.forEach((state, index) => setRowActive(state, state.active + (index === 1 ? -1 : 1)));
     }, 2800);
   };
@@ -161,7 +162,6 @@
     document.body.classList.remove("gallery-carousel-open");
     carouselTrigger?.focus();
     carouselTrigger = null;
-    rows.forEach((state, index) => setRowActive(state, state.active + (index === 1 ? -1 : 1)));
     startWallAutoplay();
   };
 
@@ -206,7 +206,7 @@
   window.addEventListener("scroll", () => {
     const distance = window.scrollY - lastScrollY;
     const bounds = wall.getBoundingClientRect();
-    if (Math.abs(distance) < 72 || bounds.bottom < 0 || bounds.top > window.innerHeight || wall.contains(document.activeElement)) return;
+    if (reducedMotion() || !dialog.hidden || Math.abs(distance) < 72 || bounds.bottom < 0 || bounds.top > window.innerHeight || wall.contains(document.activeElement)) return;
     lastScrollY = window.scrollY;
     const step = distance > 0 ? 1 : -1;
     rows.forEach((state, index) => setRowActive(state, state.active + step * (index === 1 ? -1 : 1)));

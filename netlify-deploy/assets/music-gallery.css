@@ -1,0 +1,77 @@
+.music-gallery {
+  background: radial-gradient(ellipse at 50% 45%, rgba(40, 184, 255, .08), transparent 65%), #070707;
+}
+.music-gallery .section-heading { margin-bottom: 24px; }
+.music-gallery .section-heading p { color: var(--muted); }
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(18px, 3vw, 34px);
+  row-gap: clamp(18px, 3vw, 30px);
+  width: min(800px, 100%);
+  margin: auto;
+  padding: 16px 8px calc(40px + clamp(24px, 4vw, 46px));
+  direction: ltr;
+}
+.music-tile {
+  --music-angle: -1.3deg;
+  animation: music-float 7s ease-in-out infinite alternate paused;
+}
+.music-tile:nth-child(4n + 3),
+.music-tile:nth-child(4n + 4) {
+  --music-angle: 1.2deg;
+  animation-duration: 9s;
+  animation-delay: -3s;
+}
+.music-tile:nth-child(even) {
+  position: relative;
+  top: clamp(24px, 4vw, 46px);
+  animation-direction: alternate-reverse;
+  animation-delay: -2s;
+}
+.music-gallery.is-in-view:not(.is-paused) .music-tile { animation-play-state: running; }
+.music-gallery .music-tile:hover,
+.music-gallery:focus-within .music-tile { animation-play-state: paused; }
+.music-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(240, 200, 117, .32);
+  border-radius: clamp(12px, 2vw, 22px);
+  background: #111;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .4);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+.music-card img { width: 100%; height: 100%; object-fit: cover; }
+.music-card:hover,
+.music-card:focus-visible { transform: scale(1.035); border-color: var(--gold-light); }
+.music-play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  display: grid;
+  place-items: center;
+  width: clamp(38px, 5vw, 58px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .65);
+  color: white;
+  font-size: clamp(16px, 2vw, 22px);
+  pointer-events: none;
+}
+.music-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.music-actions .btn { padding: 10px 20px; cursor: pointer; }
+.music-actions [hidden] { display: none; }
+@keyframes music-float {
+  from { transform: translateY(-6px) rotate(var(--music-angle)); }
+  to { transform: translateY(6px) rotate(calc(0deg - var(--music-angle))); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .music-tile { animation: none; }
+  .music-card { transition: none; }
+  .music-motion-toggle { display: none; }
+}
+body.a11y-reduced-motion .music-motion-toggle { display: none; }

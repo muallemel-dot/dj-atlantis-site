@@ -8,6 +8,30 @@ const source = (path) => readFileSync(new URL(path, site), "utf8");
 const pages = readdirSync(site, { recursive: true }).filter((path) => path.endsWith(".html"));
 const scripts = (html) => [...html.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map((match) => match[1]);
 
+test("music gallery only animates in view and lets visitors pause and resume", () => {
+  const { document, context } = environment();
+  const gallery = element(document), motion = element(document);
+  gallery.querySelector = () => motion;
+  document.querySelector = () => gallery;
+  let visibility;
+  context.IntersectionObserver = class {
+    constructor(callback) { visibility = callback; }
+    observe(target) { assert.equal(target, gallery); }
+  };
+  vm.runInNewContext(source("assets/music-gallery.js"), context);
+  assert.equal(gallery.classList.contains("is-in-view"), false);
+  visibility([{ isIntersecting: true }]);
+  assert.equal(gallery.classList.contains("is-in-view"), true);
+  motion.emit("click");
+  assert.equal(gallery.classList.contains("is-paused"), true);
+  assert.equal(motion.attributes["aria-pressed"], "true");
+  motion.emit("click");
+  assert.equal(gallery.classList.contains("is-paused"), false);
+  assert.equal(motion.attributes["aria-pressed"], "false");
+  visibility([{ isIntersecting: false }]);
+  assert.equal(gallery.classList.contains("is-in-view"), false);
+});
+
 function element(document) {
   const classes = new Set();
   return {

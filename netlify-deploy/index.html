@@ -42,6 +42,88 @@
       grid-template-columns: minmax(0, 1fr);
     }
 
+    #home {
+      min-height: auto;
+    }
+
+    #home .hero-buttons {
+      width: 100%;
+      margin-inline: 0;
+    }
+
+    #home .hero-buttons .btn {
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    .wide-video-intro {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .wide-video-intro .wide-video-title {
+      margin-block-end: 12px;
+    }
+
+    .wide-video-intro p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    #about {
+      position: relative;
+      isolation: isolate;
+      display: block;
+      overflow: hidden;
+      padding: 50px 32px 64px;
+      background: #080808;
+    }
+    #about::before,
+    #about::after { content: ""; position: absolute; inset: 0; }
+    #about::before {
+      z-index: -2;
+      background: url("assets/performance/gallery/event-52.webp") center 40% / cover no-repeat;
+    }
+    #about::after {
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(5,5,5,.80), rgba(5,5,5,.88) 60%, #080808);
+    }
+    #about .about-heading { text-align: center; margin: 0 auto 36px; }
+    #about .about-heading .kicker { color: var(--gold-light); font-size: 15px; font-weight: 700; margin: 0 0 12px; }
+    #about h2 { font-size: clamp(34px, 4vw, 54px); line-height: 1.12; margin: 0; font-weight: 800; }
+    #about .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.15fr);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+      max-width: 1040px;
+      margin: auto;
+    }
+    #about .about-portrait { margin: 0; }
+    #about .about-portrait img {
+      display: block; width: 100%; height: auto;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent), linear-gradient(transparent, #000 2%, #000 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent), linear-gradient(transparent, #000 2%, #000 94%, transparent);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+    }
+    #about .about-copy { max-width: 580px; }
+    #about .about-copy p { margin: 0 0 18px; font-size: 18px; line-height: 1.75; color: #d5d5d5; }
+    #about .about-copy .about-lead { color: white; font-size: 21px; line-height: 1.65; font-weight: 700; }
+    @media (max-width: 700px) {
+      #about { padding: 32px 24px 40px; }
+      #about::before { background-position: center top; background-size: auto 580px; }
+      #about::after { background: linear-gradient(180deg, #050505b8, #080808 650px); }
+      #about .about-heading { margin-bottom: 26px; }
+      #about h2 { font-size: clamp(30px, 8.8vw, 40px); }
+      #about .about-layout { grid-template-columns: 1fr; gap: 28px; }
+      #about .about-portrait { width: min(100%, 340px); margin: auto; }
+      #about .about-copy { max-width: 480px; margin: auto; }
+      #about .about-copy p { font-size: 17px; line-height: 1.75; }
+      #about .about-copy .about-lead { font-size: 19px; }
+    }
+
     .wide-video-box {
       aspect-ratio: 16 / 9;
     }
@@ -138,27 +220,6 @@
 
     .seo-directory-row .seo-city-toggle[open] > summary {
       margin-bottom: 0;
-    }
-
-    .hero-proof {
-      flex-basis: 100%;
-      max-width: 560px;
-      margin: 8px 0 0;
-      padding: 14px 18px;
-      border-inline-start: 3px solid var(--gold-light);
-      border-radius: var(--radius-sm);
-      color: #f5f5f5;
-      background: rgba(0, 0, 0, .48);
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.55;
-    }
-
-    .hero-proof footer {
-      margin-top: 6px;
-      color: var(--gold-light);
-      font-size: 15px;
-      font-weight: 800;
     }
 
     .site-footer nav {
@@ -429,6 +490,7 @@
   <link rel="stylesheet" href="assets/review-carousel-3d.css?v=20261001-1">
   <link rel="stylesheet" href="assets/services-orbit.css?v=20260927">
   <link rel="stylesheet" href="assets/contact-card.css?v=20260927-4">
+  <link rel="stylesheet" href="assets/music-gallery.css?v=20261108-1">
 </head>
 <body class="home-hero-active">
   <a class="skip-link" href="#main">דלג לתוכן</a>
@@ -493,13 +555,10 @@
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="kicker">DJ ATLANTIS | אלי מועלם</p>
-          <h1><span>דיג׳יי תקליטן דתי</span><span>לחתונות ואירועים</span></h1>
-          <p class="hero-lead">אלי מועלם - DJ ATLANTIS<br>תקליטן לחתונה חרדית | דתית מודרנית | דתית לאומית<br>דיג׳יי מהשמות הבולטים במגזר הדתי עם 10 שנים של העברת מסע מטורף את קהל לקוחותיו עם התפוצצות על הבמות הגדולות באולומות וגני אירועים הטובים בישראל<br>מההתרגשות בחופה ועד הטירוף ברחבה המוזיקה שלכם, האנרגיה שלי ולילה שאף אחד לא רוצה לסיים</p>
+          <h1>דיגיי לחתונה חרדית דתית מודרנית</h1>
+          <p class="hero-lead">מהחופה ועד המסיבה, עם מוזיקה שמותאמת לזוג ולקהל.</p>
           <div class="hero-buttons">
-            <blockquote class="hero-proof">
-              "לא הפסקנו לרקוד והרחבה נשארה מלאה ושמחה לאורך כל הערב."
-              <footer>מתוך המלצה של זוג אחרי החתונה</footer>
-            </blockquote>
+            <a class="btn btn-gold" href="#contact">בדיקת זמינות לתאריך שלכם</a>
           </div>
         </div>
 
@@ -508,11 +567,8 @@
 
     <section class="wide-video-slot" id="dj-wedding-religious-video" aria-labelledby="adama-video-title">
       <div class="wide-video-intro">
-        <h2 class="wide-video-title" id="adama-video-title">ברוכים הבאים ל־DJ ATLANTIS</h2>
-        <p>החתונה שלכם, האנשים שאתם אוהבים והמוזיקה שמחברת את כולם. כאן מתחילה החגיגה שלכם.</p>
-        <p>אני אלי מועלם, ובשבילי כל חתונה מתחילה בהיכרות איתכם. עם הקשבה, אהבה למוזיקה והתאמה אישית לסגנון שלכם, ניצור יחד את האווירה הנכונה.</p>
-        <p>אבל במקום רק לספר לכם, אני מזמין אתכם להרגיש בעצמכם.</p>
-        <p><strong>לחצו על הסרטון כאן למטה, תגבירו קצת ובואו נכיר.</strong></p>
+        <h2 class="wide-video-title" id="adama-video-title">לחצו ותהנו מהאווירה המטורפת של ATLANTIS</h2>
+        <p>מתוך חתונה חרדית מודרנית באולמי אדמה באשדוד.</p>
       </div>
       <div class="wide-video-box">
         <button class="youtube-facade" type="button" data-youtube-src="https://www.youtube-nocookie.com/embed/lY5yt_Ja710?rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fdjatlantis.co.il&amp;playsinline=1" data-youtube-title="DJ ATLANTIS בחתונה חרדית מודרנית באולמי אדמה אשדוד" aria-label="הפעלת הסרטון: DJ ATLANTIS בחתונה חרדית מודרנית באולמי אדמה אשדוד"><img src="https://i.ytimg.com/vi/lY5yt_Ja710/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async"><span class="youtube-facade-play" aria-hidden="true"></span><span class="youtube-facade-caption" aria-hidden="true">לחצו להפעלה</span></button>
@@ -566,110 +622,6 @@
         <button class="video-strip-prev" type="button" aria-label="הסרטון הקודם">
           <svg viewBox="0 0 80 24" aria-hidden="true"><path d="M8 12h64M64 4l8 8-8 8"/></svg>
         </button>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="about-copy reveal">
-        <p class="kicker">קצת עליי</p>
-        <h2>נעים להכיר, אלי מועלם - DJ ATLANTIS</h2>
-        <p>אני אלי מועלם, DJ ATLANTIS. כבר עשור אני חי את עולם האירועים ומגיע לכל ערב עם אנרגיה גבוהה, יחס אישי ואחריות מלאה על הצד המוזיקלי.</p>
-        <p>אני מתמחה בחתונות דתיות ומסורתיות, חינות, בר ובת מצווה ואירועים משפחתיים בכל הארץ. אני יודע לחבר בין מוזיקה חסידית, מזרחית, ישראלית, לועזית ועדכנית, תוך כבוד למשפחה, לאופי הקהל ולמבנה האירוע.</p>
-        <p>מבחינתי אירוע טוב מתחיל הרבה לפני הרחבה. בשיחה המקדימה אני לומד מי אתם, אילו רגעים חשובים לכם, מה אתם אוהבים ומה פחות, ומתאם את הפרטים מול המקום כדי להגיע רגוע, מסודר ומוכן.</p>
-        <p>בזמן האירוע אני לא עובד לפי פלייליסט קשיח. אני קורא את הרחבה, מרגיש מתי להרים, מתי לשנות כיוון ומתי לתת לרגע לדבר. המטרה שלי פשוטה: שאתם תיהנו באמת, האורחים ירגישו חלק, והמוזיקה תחבר את כולם לחוויה אחת שמחה ומדויקת.</p>
-        <a class="read-more" href="#contact">בואו נדבר על האירוע</a>
-      </div>
-    </section>
-
-<section class="section gallery gallery-wall-demo" id="gallery">
-      <div class="section-heading reveal">
-        <p class="kicker">גלריה</p>
-        <h2>רגעים מהאירועים של ATLANTIS</h2>
-      </div>
-
-                  <div class="gallery-grid gallery-wall reveal" aria-label="גלריית אירועים של DJ ATLANTIS">
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-44.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-44.webp" data-full-src="assets/gallery-atlantis/event-44.jpg" alt="אירוע של DJ ATLANTIS - תמונה 1" loading="lazy" decoding="async" style="object-position:center 0%"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-51.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-51.webp" data-full-src="assets/gallery-atlantis/event-51.jpg" alt="אלי מועלם DJ ATLANTIS מרים את הקהל באירוע" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-36.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-36.webp" data-full-src="assets/gallery-atlantis/event-36.jpg" alt="אירוע של DJ ATLANTIS - תמונה 2" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-52.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-52.webp" data-full-src="assets/gallery-atlantis/event-52.jpg" alt="עמדת DJ ATLANTIS עם אפקטים של עשן ותאורה" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-55.webp" type="image/webp"><img width="640" height="426" src="assets/performance/gallery/event-55.webp" data-full-src="assets/gallery-atlantis/event-55.jpg" alt="כלה מניפה דגל ישראל ברחבת החתונה" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-10.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-10.webp" data-full-src="assets/gallery-atlantis/event-10.jpg" alt="אירוע של DJ ATLANTIS - תמונה 4" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-49.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-49.webp" data-full-src="assets/gallery-atlantis/event-49.jpg" alt="אלי מועלם מתקלט מול מסכי לד באירוע" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-02.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-02.webp" data-full-src="assets/gallery-atlantis/event-02.jpg" alt="אירוע של DJ ATLANTIS - תמונה 7" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-53.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-53.webp" data-full-src="assets/gallery-atlantis/event-53.jpg" alt="אלי מועלם מתקלט בעמדת DJ באירוע" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-09.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-09.webp" data-full-src="assets/gallery-atlantis/event-09.jpg" alt="אירוע של DJ ATLANTIS - תמונה 8" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-22.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-22.webp" data-full-src="assets/gallery-atlantis/event-22.jpg" alt="אירוע של DJ ATLANTIS - תמונה 9" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-50.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-50.webp" data-full-src="assets/gallery-atlantis/event-50.jpg" alt="אלי מועלם בעמדת DJ מול אפקטים של עשן" loading="lazy" decoding="async"></picture></figure>
-              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-48.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-48.webp" data-full-src="assets/gallery-atlantis/event-48.jpg" alt="במת DJ ATLANTIS עם תאורה כחולה ואדומה" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-25.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-25.webp" data-full-src="assets/gallery-atlantis/event-25.jpg" alt="אירוע של DJ ATLANTIS - תמונה 13" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-46.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-46.webp" data-full-src="assets/gallery-atlantis/event-46.jpg" alt="אירוע של DJ ATLANTIS - תמונה 15" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-11.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-11.webp" data-full-src="assets/gallery-atlantis/event-11.jpg" alt="אירוע של DJ ATLANTIS - תמונה 17" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-05.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-05.webp" data-full-src="assets/gallery-atlantis/event-05.jpg" alt="אירוע של DJ ATLANTIS - תמונה 18" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-27.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-27.webp" data-full-src="assets/gallery-atlantis/event-27.jpg" alt="אירוע של DJ ATLANTIS - תמונה 21" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-12.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-12.webp" data-full-src="assets/gallery-atlantis/event-12.jpg" alt="אירוע של DJ ATLANTIS - תמונה 22" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-35.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-35.webp" data-full-src="assets/gallery-atlantis/event-35.jpg" alt="אירוע של DJ ATLANTIS - תמונה 23" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-04.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-04.webp" data-full-src="assets/gallery-atlantis/event-04.jpg" alt="אירוע של DJ ATLANTIS - תמונה 24" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-26.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-26.webp" data-full-src="assets/gallery-atlantis/event-26.jpg" alt="אירוע של DJ ATLANTIS - תמונה 26" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-47.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-47.webp" data-full-src="assets/gallery-atlantis/event-47.jpg" alt="אירוע של DJ ATLANTIS - תמונה 29" loading="lazy" decoding="async" style="object-position:center 0%"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-20.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-20.webp" data-full-src="assets/gallery-atlantis/event-20.jpg" alt="אירוע של DJ ATLANTIS - תמונה 30" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-16.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-16.webp" data-full-src="assets/gallery-atlantis/event-16.jpg" alt="אירוע של DJ ATLANTIS - תמונה 31" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-01.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-01.webp" data-full-src="assets/gallery-atlantis/event-01.jpg" alt="אירוע של DJ ATLANTIS - תמונה 33" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-45.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-45.webp" data-full-src="assets/gallery-atlantis/event-45.jpg" alt="אירוע של DJ ATLANTIS - תמונה 35" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-06.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-06.webp" data-full-src="assets/gallery-atlantis/event-06.jpg" alt="אירוע של DJ ATLANTIS - תמונה 36" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-03.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-03.webp" data-full-src="assets/gallery-atlantis/event-03.jpg" alt="אירוע של DJ ATLANTIS - תמונה 37" loading="lazy" decoding="async"></picture></figure>
-              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-54.webp" type="image/webp"><img width="640" height="426" src="assets/performance/gallery/event-54.webp" data-full-src="assets/gallery-atlantis/event-54.jpg" alt="אלי מועלם DJ ATLANTIS עם זוג לאחר החתונה" loading="lazy" decoding="async"></picture></figure>
-
-
-            </div>
-      <div class="gallery-more-wrap reveal"><button class="btn btn-outline" type="button" id="showAllGallery">לכל התמונות</button></div>
-    </section>
-
-    <section class="section reasons services-orbit" id="services">
-      <div class="section-heading reveal">
-        <p class="kicker">מה אלי מביא לאירוע</p>
-        <h2>דיג׳יי לחתונות דתיות, חינות ואירועים בכל הארץ</h2>
-      </div>
-
-      <div class="reason-layout">
-        <div class="reason-column">
-          <article class="reason-card reveal">
-            <div class="reason-icon equalizer"><i></i><i></i><i></i></div>
-            <h3>תקליטן לחתונה דתית ומסורתית</h3>
-            <p>התהליך מתחיל בשיחת היכרות, ממשיך בפגישה מסודרת לבחירת הסגנון והרגעים החשובים ומסתיים בתיאום סופי לפני האירוע, כדי שהכול יעבוד בדיוק כמו שתכננתם.</p>
-          </article>
-          <article class="reason-card reveal">
-            <div class="reason-icon">★</div>
-            <h3>דיג׳יי לחינה</h3>
-            <p>חינה צריכה קצב, צבע, משפחתיות ושמחה גדולה. אלי מתאים את המוזיקה לעדה, למשפחה ולאווירה שאתם רוצים לפתוח איתה את החגיגה.</p>
-          </article>
-          <article class="reason-card reveal">
-            <div class="reason-icon">♫</div>
-            <h3>דיג׳יי לבר מצווה ובת מצווה</h3>
-            <p>אירועי בר מצווה ובת מצווה צריכים לדבר גם לילדים, גם לחברים וגם למשפחה. המוזיקה נבנית כך שכולם ירגישו חלק מהשמחה.</p>
-          </article>
-        </div>
-
-        <div class="center-image reveal">
-          <img width="800" height="800" src="assets/performance/center-headphones.webp" alt="אוזניות DJ ATLANTIS" loading="lazy" decoding="async">
-        </div>
-
-        <div class="reason-column">
-          <article class="reason-card reveal">
-            <div class="reason-icon">✦</div>
-            <h3>אירועים בהפרדה</h3>
-            <p>היכרות אמיתית עם חתונות דתיות, חתונות מסורתיות וקהל יהודי מגוון, יחד עם מוזיקה עכשווית שמתאימה לצעירים ולמבוגרים.</p>
-          </article>
-          <article class="reason-card reveal">
-            <div class="reason-icon">◆</div>
-            <h3>שירות בכל הארץ</h3>
-            <p>הגעה מסודרת לאולמות ולאירועים ברחבי ישראל, עם ציוד מתאים ותיאום מלא מול האולם והמשפחה.</p>
-          </article>
-          <article class="reason-card reveal">
-            <div class="reason-icon">●</div>
-            <h3>מגיעים מוכנים</h3>
-            <p>תכנון מסודר, ציוד מתאים, עמידה בזמנים ואנרגיה טובה מהרגע הראשון ועד השיר האחרון בכל חתונה, חינה או אירוע משפחתי.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -728,13 +680,185 @@
       </div>
     </section>
 
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <header class="about-heading">
+        <p class="kicker">קצת עליי</p>
+        <h2 id="about-title">נעים מאוד, אני אלי</h2>
+      </header>
+      <div class="about-layout">
+        <figure class="about-portrait">
+          <img src="assets/gallery-atlantis/eli-mualem-personal-intro.jpg" width="1024" height="1280" alt="אלי מועלם, DJ ATLANTIS" loading="lazy" decoding="async">
+        </figure>
+        <div class="about-copy">
+          <p class="about-lead">אני אלי מועלם, DJ ATLANTIS, דיג׳יי המתמחה בחתונות חרדיות מודרניות ודתיות לאומיות. אני משלב היכרות עם הקהל, בחירה מוזיקלית מוקפדת וקריאה של הרחבה בזמן אמת.</p>
+          <p>לכל זוג יש סגנון משלו, והוא הבסיס למוזיקה שאני בונה לערב. מחסידי ומזרחי ועד ישראלי ולועזי, אני מתאים את השירים, המעברים והקצב להעדפות שלכם ולמה שקורה ברחבה — מהחופה ועד הריקודים.</p>
+          <p>מאחורי המוזיקה עומדת הכנה מסודרת: היכרות אישית, בחירת השירים לרגעים החשובים ותיאום עם האולם. מבחינתי, מקצועיות נמדדת גם בהקשבה, בתכנון ובתשומת הלב לפרטים, לפני האירוע ובמהלכו.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="section gallery gallery-wall-demo" id="gallery">
+      <div class="section-heading reveal">
+        <p class="kicker">גלריה</p>
+        <h2>רגעים מהאירועים של ATLANTIS</h2>
+      </div>
+
+                  <div class="gallery-grid gallery-wall reveal" aria-label="גלריית אירועים של DJ ATLANTIS">
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-44.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-44.webp" data-full-src="assets/gallery-atlantis/event-44.jpg" alt="אירוע של DJ ATLANTIS - תמונה 1" loading="lazy" decoding="async" style="object-position:center 0%"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-51.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-51.webp" data-full-src="assets/gallery-atlantis/event-51.jpg" alt="אלי מועלם DJ ATLANTIS מרים את הקהל באירוע" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-36.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-36.webp" data-full-src="assets/gallery-atlantis/event-36.jpg" alt="אירוע של DJ ATLANTIS - תמונה 2" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-52.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-52.webp" data-full-src="assets/gallery-atlantis/event-52.jpg" alt="עמדת DJ ATLANTIS עם אפקטים של עשן ותאורה" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-55.webp" type="image/webp"><img width="640" height="426" src="assets/performance/gallery/event-55.webp" data-full-src="assets/gallery-atlantis/event-55.jpg" alt="כלה מניפה דגל ישראל ברחבת החתונה" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-10.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-10.webp" data-full-src="assets/gallery-atlantis/event-10.jpg" alt="אירוע של DJ ATLANTIS - תמונה 4" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-49.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-49.webp" data-full-src="assets/gallery-atlantis/event-49.jpg" alt="אלי מועלם מתקלט מול מסכי לד באירוע" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-02.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-02.webp" data-full-src="assets/gallery-atlantis/event-02.jpg" alt="אירוע של DJ ATLANTIS - תמונה 7" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-53.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-53.webp" data-full-src="assets/gallery-atlantis/event-53.jpg" alt="אלי מועלם מתקלט בעמדת DJ באירוע" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-09.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-09.webp" data-full-src="assets/gallery-atlantis/event-09.jpg" alt="אירוע של DJ ATLANTIS - תמונה 8" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-22.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-22.webp" data-full-src="assets/gallery-atlantis/event-22.jpg" alt="אירוע של DJ ATLANTIS - תמונה 9" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-50.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-50.webp" data-full-src="assets/gallery-atlantis/event-50.jpg" alt="אלי מועלם בעמדת DJ מול אפקטים של עשן" loading="lazy" decoding="async"></picture></figure>
+              <figure><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-48.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-48.webp" data-full-src="assets/gallery-atlantis/event-48.jpg" alt="במת DJ ATLANTIS עם תאורה כחולה ואדומה" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-25.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-25.webp" data-full-src="assets/gallery-atlantis/event-25.jpg" alt="אירוע של DJ ATLANTIS - תמונה 13" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-46.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-46.webp" data-full-src="assets/gallery-atlantis/event-46.jpg" alt="אירוע של DJ ATLANTIS - תמונה 15" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-11.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-11.webp" data-full-src="assets/gallery-atlantis/event-11.jpg" alt="אירוע של DJ ATLANTIS - תמונה 17" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-05.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-05.webp" data-full-src="assets/gallery-atlantis/event-05.jpg" alt="אירוע של DJ ATLANTIS - תמונה 18" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-27.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-27.webp" data-full-src="assets/gallery-atlantis/event-27.jpg" alt="אירוע של DJ ATLANTIS - תמונה 21" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-12.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-12.webp" data-full-src="assets/gallery-atlantis/event-12.jpg" alt="אירוע של DJ ATLANTIS - תמונה 22" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-35.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-35.webp" data-full-src="assets/gallery-atlantis/event-35.jpg" alt="אירוע של DJ ATLANTIS - תמונה 23" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-04.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-04.webp" data-full-src="assets/gallery-atlantis/event-04.jpg" alt="אירוע של DJ ATLANTIS - תמונה 24" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-26.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-26.webp" data-full-src="assets/gallery-atlantis/event-26.jpg" alt="אירוע של DJ ATLANTIS - תמונה 26" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-47.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-47.webp" data-full-src="assets/gallery-atlantis/event-47.jpg" alt="אירוע של DJ ATLANTIS - תמונה 29" loading="lazy" decoding="async" style="object-position:center 0%"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-20.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-20.webp" data-full-src="assets/gallery-atlantis/event-20.jpg" alt="אירוע של DJ ATLANTIS - תמונה 30" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-16.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-16.webp" data-full-src="assets/gallery-atlantis/event-16.jpg" alt="אירוע של DJ ATLANTIS - תמונה 31" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-01.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-01.webp" data-full-src="assets/gallery-atlantis/event-01.jpg" alt="אירוע של DJ ATLANTIS - תמונה 33" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-45.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-45.webp" data-full-src="assets/gallery-atlantis/event-45.jpg" alt="אירוע של DJ ATLANTIS - תמונה 35" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-06.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-06.webp" data-full-src="assets/gallery-atlantis/event-06.jpg" alt="אירוע של DJ ATLANTIS - תמונה 36" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-03.webp" type="image/webp"><img width="640" height="474" src="assets/performance/gallery/event-03.webp" data-full-src="assets/gallery-atlantis/event-03.jpg" alt="אירוע של DJ ATLANTIS - תמונה 37" loading="lazy" decoding="async"></picture></figure>
+              <figure class="gallery-extra"><picture><source media="(max-width: 720px)" srcset="assets/performance/gallery-mobile-300/event-54.webp" type="image/webp"><img width="640" height="426" src="assets/performance/gallery/event-54.webp" data-full-src="assets/gallery-atlantis/event-54.jpg" alt="אלי מועלם DJ ATLANTIS עם זוג לאחר החתונה" loading="lazy" decoding="async"></picture></figure>
+
+
+            </div>
+      <div class="gallery-more-wrap reveal"><button class="btn btn-outline" type="button" id="showAllGallery">לכל התמונות</button></div>
+    </section>
+
+    <section class="section reasons services-orbit" id="services">
+      <div class="section-heading reveal">
+        <p class="kicker">השירותים שלי</p>
+        <h2>מוזיקה לאירועים ותכנון משותף</h2>
+      </div>
+
+      <div class="reason-layout">
+        <div class="reason-column">
+          <article class="reason-card reveal">
+            <div class="reason-icon equalizer"><i></i><i></i><i></i></div>
+            <h3>חתונות חרדיות ודתיות</h3>
+            <p>תכנון המוזיקה מהחופה ועד הריקודים, כולל בחירת שירים לרגעים החשובים וסגנונות שמתאימים לזוג ולקהל.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">★</div>
+            <h3>דיג׳יי לחינה</h3>
+            <p>אני מתאים את המוזיקה לעדה, למסורת המשפחתית ולאווירה שתרצו בחינה.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">♫</div>
+            <h3>דיג׳יי לבר מצווה ובת מצווה</h3>
+            <p>בחירת מוזיקה שמתאימה לחוגגים, לחברים ולמשפחה, עם מקום לסגנונות שהילדים אוהבים.</p>
+          </article>
+        </div>
+
+        <div class="center-image reveal">
+          <img width="800" height="800" src="assets/performance/center-headphones.webp" alt="אוזניות DJ ATLANTIS" loading="lazy" decoding="async">
+        </div>
+
+        <div class="reason-column">
+          <article class="reason-card reveal">
+            <div class="reason-icon">✦</div>
+            <h3>אירועים בהפרדה</h3>
+            <p>מתאמים מראש את מבנה האירוע בהפרדה ואת סגנונות המוזיקה, בהתאם לאופי המשפחה והקהל.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">◆</div>
+            <h3>שירות בכל הארץ</h3>
+            <p>הגעה מסודרת לאולמות ולאירועים ברחבי ישראל, עם ציוד מתאים ותיאום מלא מול האולם והמשפחה.</p>
+          </article>
+          <article class="reason-card reveal">
+            <div class="reason-icon">●</div>
+            <h3>התהליך לקראת האירוע</h3>
+            <p>שיחת היכרות, פגישה לבחירת המוזיקה ותיאום סופי מול האולם והמשפחה לקראת האירוע.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="section music-gallery" id="music" aria-labelledby="music-title">
+      <div class="section-heading">
+        <h2 id="music-title">המוזיקה שלי</h2>
+        <p>בחרו סט להאזנה ביוטיוב.</p>
+      </div>
+      <div class="music-grid">
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=3-ojizyuumM&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט דתי — קיץ 2026">
+            <img src="https://i.ytimg.com/vi/3-ojizyuumM/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=ZsoNgWd1EzE&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט להיטים ומזרחית לחתונה דתית — 2026">
+            <img src="https://i.ytimg.com/vi/ZsoNgWd1EzE/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=6pqV6kxCv-k&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט ל״ג בעומר דתי — 2026">
+            <img src="https://i.ytimg.com/vi/6pqV6kxCv-k/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=xde4y7aQ5yQ&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט טכנו מלודי — 2025">
+            <img src="https://i.ytimg.com/vi/xde4y7aQ5yQ/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=-VhRiX7JDw8&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט טראנסים — 2024">
+            <img src="https://i.ytimg.com/vi/-VhRiX7JDw8/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=imCsxxU_cOU&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט טכנו מלודי — 2024">
+            <img src="https://i.ytimg.com/vi/imCsxxU_cOU/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=a8apWpMlIIs&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט אפרו האוס וטכנו — 2024">
+            <img src="https://i.ytimg.com/vi/a8apWpMlIIs/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="music-tile">
+          <a class="music-card" href="https://www.youtube.com/watch?v=2rtRaH4Sp2s&amp;list=PLQeXVy0s6ogA" target="_blank" rel="noopener" aria-label="האזנה לסט להיטים מיינסטרים ומזרחית — קיץ 2024">
+            <img src="https://i.ytimg.com/vi/2rtRaH4Sp2s/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async">
+            <span class="music-play" aria-hidden="true">▶</span>
+          </a>
+        </div>
+      </div>
+      <div class="music-actions">
+        <a class="btn btn-dark" href="https://www.youtube.com/playlist?list=PLQeXVy0s6ogA" target="_blank" rel="noopener">לפלייליסט ביוטיוב</a>
+        <button class="btn btn-dark music-motion-toggle" type="button" aria-pressed="false" hidden>עצירת התנועה</button>
+      </div>
+    </section>
 
     <section class="contact-section" id="contact">
       <div class="contact-card reveal">
         <div class="contact-copy">
           <p class="kicker">האירוע שלכם מתחיל כאן</p>
           <h2>ספרו לי מה אתם מתכננים</h2>
-          <p>השאירו כמה פרטים קצרים. אני אחזור אליכם באופן אישי, נבדוק את התאריך ונבין איזו מוזיקה ואווירה יתאימו בדיוק לקהל שלכם.</p>
+          <p>ספרו לי על התאריך, המקום וסוג האירוע. אחזור אליכם אישית לבדיקת זמינות ולשיחה על המוזיקה.</p>
           <div class="contact-note">שיחה אישית עם אלי מועלם</div>
         </div>
 
@@ -775,8 +899,8 @@
     <section class="attractions" id="attractions">
       <div class="attractions-bg" aria-hidden="true"></div>
       <div class="attractions-heading reveal">
-        <h2>תוספות שעושות וואו ברחבה</h2>
-        <p>רוצים להוסיף רגעים חזקים לחופה, לסלואו או לריקודים? אפשר לשלב אטרקציות שמתאימות בדיוק לאופי האירוע.</p>
+        <h2>תאורה ואפקטים לאירוע</h2>
+        <p>אפשר לשלב זיקוקים קרים, לייזרים, עשן ותאורה לחופה ולריקודים, בהתאם לאופי האירוע.</p>
       </div>
 
       <div class="attraction-grid">
@@ -856,6 +980,7 @@
     <!-- /bar-mitzvah-city-links -->
   </div>
   </main>
+
 
   <footer class="site-footer" id="site-footer">
     <nav aria-label="קישורי תחתית">
@@ -1260,5 +1385,6 @@ galleryImages.forEach((image, index) => {
   <script src="assets/video-gallery-link.js?v=20261013-1" defer></script>
   <script src="assets/services-orbit.js?v=20260927" defer></script>
   <script src="assets/contact-form.js?v=20260927" defer></script>
+  <script src="assets/music-gallery.js?v=20261108-1" defer></script>
 </body>
 </html>
